@@ -1,0 +1,131 @@
+*{
+  font-family: 'Droid Sans', sans-serif;
+  margin:0;
+}
+
+body{
+  background: #eee;
+}
+
+.wrapper{
+
+  width:100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  background-image: url("phone.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  min-height: 650px;
+}
+.flex-container-two{
+  flex-basis: 440px;
+  margin-top: 89px;
+margin-left: 137px;
+margin-right: 129px;
+border-style: solid;
+border-width: 8px;
+border-radius: 11px;
+}
+.one ul{
+  display: flex;
+      text-align: center;
+          margin-left: -34px;
+
+}
+.one li{
+  margin: 2px;
+  flex-basis: 63px;
+list-style: none;
+
+
+}
+.nav{
+  background: orange;
+  height: 59px;
+  padding: 1px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  line-height: 58px;
+  text-align: center;
+  font-weight: 900;
+}
+#battery{
+padding-left: 373px;
+
+}
+.box{
+  height: 88px;
+  flex-basis: 600px;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+}
+
+.one{
+  /*background: red;*/
+}
+
+.two{
+  /*background: blue;*/
+  color: #2EDB31;
+  text-align: center;
+}
+
+.three{
+  /*background: green;*/
+  text-align: center;
+}
+
+.four{
+  /*background: yellow;*/
+}
+.five{
+  background: white;
+  text-align: center;
+  align-self: flex-end;
+  line-height: 15;
+  font-size: 10px;
+}
+.six{
+  align-items: flex-start;
+  color: #2EDB31;
+
+}
+p{
+  margin:10px;
+  padding:px;
+}
+canvas{
+  height: 300px;
+    width: 402px;
+}
+
+.chartfive{
+      height: 71px;
+      background: white;
+      text-align: center;
+      align-self: flex-end;
+      line-height: 9;
+      font-size: 10px;
+}
+.aboutfive{
+  height: 175px;
+  background: white;
+  text-align: center;
+  align-self: flex-end;
+  line-height: 33;
+  font-size: 10px;
+
+}
+a{
+text-decoration: none;
+font-size: 17px;
+color: #fff;
+
+}
