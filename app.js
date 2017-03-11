@@ -38,39 +38,24 @@ var tracker = {
   resultsEl: document.getElementById('results'),
 
   checkClicks: function() {
-    if (document.getElementById('select').value == 'oneLine') {
-      this.showResultsEl.addEventListener('click', function(e){
-        e.preventDefault();
-        var liEl = document.createElement('li');
-            console.log('oneLine');
+    this.showResultsEl.addEventListener('click', function(e){
+      e.preventDefault();
+      var liEl = document.createElement('li');
+
+      if (document.getElementById('select').value == 'oneLine') {
+        console.log('oneLine');
         liEl.textContent = oneLine.renderAsRow();
-      });
-    }
-
-    if (document.getElementById('select').value == 'twoLine') {
-      this.showResultsEl.addEventListener('click', function(e){
-        e.preventDefault();
-        var liElTwo = document.createElement('li');
+      }  else if (document.getElementById('select').value == 'twoLine') {
         console.log('twoLine');
-        liElTwo.textContent = twoLine.renderAsRow();
-      });
-    }
-
-    if (document.getElementById('select').value == 'threeLine') {
-      this.showResultsEl.addEventListener('click', function(e){
-        e.preventDefault();
-        var liEl = document.createElement('li');
+        liEl.textContent = twoLine.renderAsRow();
+      } else if (document.getElementById('select').value == 'threeLine') {
+        console.log('threeLine');
         liEl.textContent = threeLine.renderAsRow();
-      });
-    }
-
-    if (document.getElementById('select').value == 'fourLine') {
-      this.showResultsEl.addEventListener('click', function(e){
-        e.preventDefault();
-        var liEl = document.createElement('li');
+      } else if (document.getElementById('select').value == 'fourLine') {
+        console.log('fourLine');
         liEl.textContent = fourLine.renderAsRow();
-      });
-    }
+      }
+    });
   }
 };
 tracker.checkClicks();
