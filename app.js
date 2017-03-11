@@ -20,6 +20,7 @@ var table = document.getElementById('planTable');
 var resultsEl = document.getElementById('results');
 // var showResultsEl: document.getElementById('show-results');
 
+
 function mobilePlan(name, plan) {
   this.name = name;
   this.plan = plan;
@@ -44,7 +45,27 @@ mobilePlan.prototype.renderAsRow = function() {
   }
 }
 
-oneLine.renderAsRow();
-twoLine.renderAsRow();
-threeLine.renderAsRow();
-fourLine.renderAsRow();
+// oneLine.renderAsRow();
+// twoLine.renderAsRow();
+// threeLine.renderAsRow();
+// fourLine.renderAsRow();
+
+var tracker = {
+  showResultsEl: document.getElementById('show-results'),
+  resultsEl: document.getElementById('results'),
+
+  checkClicks: function() {
+    this.showResultsEl.addEventListener('click', function(e){
+      e.preventDefault();
+      tracker.renderResults();
+    });
+  },
+
+  renderResults: function (){
+    var liEl = document.createElement('li');
+    liEl.textContent = oneLine.renderAsRow();
+  },
+
+};
+
+tracker.renderResults();

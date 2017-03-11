@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Compare Plans</title>
-  </head>
-  <body>
-        <select>
-          <option id="oneLine" value="oneLine">1 line</option>
-          <option id="twoLine" value="twoLine">2 lines</option>
-          <option id="threeLine" value="threeLine">3 lines</option>
-          <option id="fourLine" value="fourLine ">4 lines</option>
-        </select>
-        <button type="button" id="show-results">show results</button>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Compare Plans</title>
+</head>
+<body>
+  <select>
+    <option id="oneLine" value="oneLine">1 line</option>
+    <option id="twoLine" value="twoLine">2 lines</option>
+    <option id="threeLine" value="threeLine">3 lines</option>
+    <option id="fourLine" value="fourLine ">4 lines</option>
+  </select>
+  <button type="button" id="show-results">show results</button>
 
-        <div id = "chart">
-          <table id = 'planTable'>
-            <tr id = 'tableTitle'>
-<th></th>
-  <th>AT&amp;T </th>
-  <th>Verizon</th>
-  <th>T-Mobile</th>
-  <th>Sprint</th>
-</tr>
-          </table>
-        </div>
-    <script type="text/javascript" src="app.js"></script>
-  </body>
+  <div id = "chart">
+    <table id = 'planTable'>
+      <tr id = 'tableTitle'>
+        <th></th>
+        <th>AT&amp;T </th>
+        <th>Verizon</th>
+        <th>T-Mobile</th>
+        <th>Sprint</th>
+      </tr>
+    </table>
+    <tr id = 'results'>
+  </div>
+  <script type="text/javascript" src="app.js"></script>
+</body>
 </html>
