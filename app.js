@@ -38,12 +38,39 @@ var tracker = {
   resultsEl: document.getElementById('results'),
 
   checkClicks: function() {
-    this.showResultsEl.addEventListener('click', function(e){
-      e.preventDefault();
-      var liEl = document.createElement('li');
-      liEl.textContent = oneLine.renderAsRow();
-    });
-  },
+    if (document.getElementById('select').value == 'oneLine') {
+      this.showResultsEl.addEventListener('click', function(e){
+        e.preventDefault();
+        var liEl = document.createElement('li');
+            console.log('oneLine');
+        liEl.textContent = oneLine.renderAsRow();
+      });
+    }
 
+    if (document.getElementById('select').value == 'twoLine') {
+      this.showResultsEl.addEventListener('click', function(e){
+        e.preventDefault();
+        var liElTwo = document.createElement('li');
+        console.log('twoLine');
+        liElTwo.textContent = twoLine.renderAsRow();
+      });
+    }
+
+    if (document.getElementById('select').value == 'threeLine') {
+      this.showResultsEl.addEventListener('click', function(e){
+        e.preventDefault();
+        var liEl = document.createElement('li');
+        liEl.textContent = threeLine.renderAsRow();
+      });
+    }
+
+    if (document.getElementById('select').value == 'fourLine') {
+      this.showResultsEl.addEventListener('click', function(e){
+        e.preventDefault();
+        var liEl = document.createElement('li');
+        liEl.textContent = fourLine.renderAsRow();
+      });
+    }
+  }
 };
 tracker.checkClicks();
