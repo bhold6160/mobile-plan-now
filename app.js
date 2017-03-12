@@ -1,44 +1,44 @@
 var carrierNames = ['AT&T', 'Verizon', 'T-Mobile', 'Sprint'];
 var lineArr = [];
-var oneLine = new MobilePlan(['$60', '$70', '$80', '$90']);
-var twoLine = new MobilePlan(['$160', '$170', '$180', '$190']);
-var threeLine = new MobilePlan(['$260', '$270', '$280', '$290']);
-var fourLine = new MobilePlan(['$360', '$470', '$580', '$960']);
+var oneLine = new MobilePlan('1 line', ['$60', '$70', '$80', '$90']);
+var twoLine = new MobilePlan('2 lines', ['$160', '$170', '$180', '$190']);
+var threeLine = new MobilePlan('3 lines', ['$260', '$270', '$280', '$290']);
+var fourLine = new MobilePlan('4 lines', ['$360', '$470', '$580', '$960']);
 
 var table = document.getElementById('planTable');
 
-var ctx = document.getElementById('myChart').getContext('2d');
-
-var chartData = {
-  type: 'bar',
-  data: {
-    labels: carrierNames,
-    datasets: [{
-      label: 'Plan Comparison',
-      data: [],
-      backgroundColor: [],
-      borderColor: 'purple',
-      borderWidth: 1,
-    }]
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-        },
-      }]
-    },
-  },
-};
+// var ctx = document.getElementById('myChart').getContext('2d');
+//
+// var chartData = {
+//   type: 'bar',
+//   data: {
+//     labels: carrierNames,
+//     datasets: [{
+//       label: 'Plan Comparison',
+//       data: [],
+//       backgroundColor: [],
+//       borderColor: 'purple',
+//       borderWidth: 1,
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       yAxes: [{
+//         ticks: {
+//           beginAtZero: true,
+//         },
+//       }]
+//     },
+//   },
+// };
 
 function MobilePlan(name, plan) {
   this.name = name;
   this.plan = plan;
-  lineArr.push(this);
+  // lineArr.push(this);
   // chartData.data.datasets[0].data.push(this);
   // chartData.data.datasets[0].backgroundColor.push(this);
-  console.log(chartData);
+  // console.log(chartData.);
 };
 
 // (function () {
@@ -107,6 +107,6 @@ var tracker = {
   // },
 };
 
-var myChart = new Chart(ctx, chartData);
+// var myChart = new Chart(ctx, chartData);
 tracker.checkClicks();
 // localStorage.getItem('stringfiedData');
