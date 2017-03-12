@@ -1,4 +1,16 @@
 .chart {
-  width: 37%;
+  width: 45%;
   height: 20%;
+}
+
+.nav a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }

@@ -45,8 +45,8 @@ MobilePlan.prototype.renderAsRow = function() {
 var tracker = {
   selectEl: document.getElementById('select'),
 
-  checkClicks: function() {
-    this.selectEl.addEventListener('change', function(e) {
+  checkClicks: function () {
+    this.selectEl.addEventListener('change', function (e) {
       // e.preventDefault();
       var liEl = document.createElement('li');
       if (document.getElementById('select').value == 'choose') {
@@ -78,4 +78,5 @@ var tracker = {
 };
 
 tracker.checkClicks();
+
 // localStorage.getItem('stringfiedData');
