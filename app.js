@@ -1,5 +1,4 @@
 var carrierNames = ['AT&T', 'Verizon', 'T-Mobile', 'Sprint'];
-var lineArr = [];
 var oneLine = new MobilePlan('1 line', ['$60', '$70', '$80', '$90']);
 var twoLine = new MobilePlan('2 lines', ['$160', '$170', '$180', '$190']);
 var threeLine = new MobilePlan('3 lines', ['$260', '$270', '$280', '$290']);
@@ -7,52 +6,22 @@ var fourLine = new MobilePlan('4 lines', ['$360', '$470', '$580', '$960']);
 
 var table = document.getElementById('planTable');
 
-// var ctx = document.getElementById('myChart').getContext('2d');
-//
-// var chartData = {
-//   type: 'bar',
-//   data: {
-//     labels: carrierNames,
-//     datasets: [{
-//       label: 'Plan Comparison',
-//       data: [],
-//       backgroundColor: [],
-//       borderColor: 'purple',
-//       borderWidth: 1,
-//     }]
-//   },
-//   options: {
-//     scales: {
-//       yAxes: [{
-//         ticks: {
-//           beginAtZero: true,
-//         },
-//       }]
-//     },
-//   },
-// };
-
 function MobilePlan(name, plan) {
   this.name = name;
   this.plan = plan;
+
   // lineArr.push(this);
   // chartData.data.datasets[0].data.push(this);
   // chartData.data.datasets[0].backgroundColor.push(this);
   // console.log(chartData.);
 };
 
-// (function () {
-//   for (var i in lineArr) {
-//     new MobilePlan(oneLine[i] + twoLine[i] + threeLine[i] + fourLine[i]);
-//   }
-// })();
-
 // var stringifiedAllProducts = localStorage.getItem('stringfiedData');
 // var parsedData = JSON.parse(stringifiedData);
 // for (var i in parsedData) {
 //   productArr[i].votes = parsedData[i].votes;
 
-MobilePlan.prototype.renderAsRow = function () {
+MobilePlan.prototype.renderAsRow = function() {
   var planTable = document.getElementById('planTable');
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
@@ -60,7 +29,7 @@ MobilePlan.prototype.renderAsRow = function () {
   trEl.appendChild(tdEl);
   planTable.appendChild(trEl);
 
-  for (var i = 0; i < 4; i++)	{
+  for (var i = 0; i < 4; i++) {
     // Get an element from li
     var planPrice = document.createElement('td');
 
@@ -76,15 +45,16 @@ MobilePlan.prototype.renderAsRow = function () {
 var tracker = {
   selectEl: document.getElementById('select'),
 
-  checkClicks: function () {
-    this.selectEl.addEventListener('change', function (e) {
+  checkClicks: function() {
+    this.selectEl.addEventListener('change', function(e) {
       // e.preventDefault();
       var liEl = document.createElement('li');
       if (document.getElementById('select').value == 'choose') {
+
       } else if (document.getElementById('select').value == 'oneLine') {
         console.log('oneLine');
         liEl.textContent = oneLine.renderAsRow();
-      }  else if (document.getElementById('select').value == 'twoLine') {
+      } else if (document.getElementById('select').value == 'twoLine') {
         console.log('twoLine');
         liEl.textContent = twoLine.renderAsRow();
       } else if (document.getElementById('select').value == 'threeLine') {
@@ -107,6 +77,5 @@ var tracker = {
   // },
 };
 
-// var myChart = new Chart(ctx, chartData);
 tracker.checkClicks();
 // localStorage.getItem('stringfiedData');
