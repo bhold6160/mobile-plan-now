@@ -1,55 +1,67 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
-  <title>MobilePlanNow</title>
-  <link rel="stylesheet" type="text/css" href=".css">
-</head>
-<meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<title>Mobile Plan Now</title>
-</head>
-<body>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8" />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+    <title>MobilePlanNow</title>
+    <link rel="stylesheet" type="text/css" href=".css">
+  </head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Mobile Plan Now</title>
+  </head>
+  <body>
 
-  <div class="wrapper">
-    <div class="flex-container">
-      <div class="flex-container-two">
-        <div class="box one">
-          <header>
-            <ul>
-              <li class="nav"><a href="about.html">About</a></li>
-              <li class="nav"><a href="index.html">Price</a></li>
-              <li class="nav"><a href="">idk</a></li>
-              <li id="battery"><img src="battery.png"</li>
-            </ul>
-          </header>
-        </div>
-
-        <!-- <main> -->
-        <div class="box two">
-          <h1>How Many Lines?</h1>
-        </div>
-        <div class="box three"
-        <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-          <div id="myDropdown" class="dropdown-content">
-            <a href="chart.html">Link 1</a>
-            <a href="chart.html">Link 2</a>
-            <a href="chart.html">Link 3</a>
+    <div class="wrapper">
+      <div class="flex-container">
+        <div class="flex-container-two">
+          <div class="box one">
+            <header>
+              <ul>
+                <li class="nav"><a href="about.html">About</a></li>
+                <li class="nav"><a href="index.html">Compair</a></li>
+                <li class="nav"><a href="chart.html">Graph</a></li>
+                <li id="battery"><img src="battery.png"</li>
+              </ul>
+            </header>
           </div>
+
+          <!-- <main> -->
+          <div class="box two">
+            <h1>How many lines do you need?</h1>
+          </div>
+          <div class="box three">
+          <select name="select" id="select">
+            <option id="choose" value= "choose">Select Your Number of Lines</option>
+              <div class="select">
+                <option id="oneLine" value="oneLine" class="line">1 line</option>
+                <option id="twoLine" value="twoLine" class="line">2 lines</option>
+                <option id="threeLine" value="threeLine"class="line">3 lines</option>
+                <option id="fourLine" value="fourLine" class="line">4 lines</option>
+              </div>
+          </select>
         </div>
-      <div class="box four">
-      <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-      </div>
-      <!-- </main> -->
-      <div class="box five">
-        <footer>email_or_whatever@.gmail.com | (360)658-8067 | Ix Procopios </footer>
-      </div>
+          <div class="box four">
+            <div id = "chart" class="results">
+              <table id = "planTable">
+                <tr id = "tableTitle">
+                <th></th>
+                <th>AT&amp;T </th>
+                <th>Verizon</th>
+                <th>T-Mobile</th>
+                <th>Sprint</th>
+              </tr>
+            </table>
+        <tr id = "results">
+        </div>
+
+
+        <!-- </main> -->
+
+
     </div>
   </div>
-</div>
-<script type="text/javascript" src="chartTest.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="app.js"></script>
+  </body>
+  </html>
