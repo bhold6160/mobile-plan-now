@@ -72,16 +72,7 @@ var comparePlan = {
     this.showResultsEl.addEventListener('click', function(e){
       e.preventDefault();
       var liEl = document.createElement('li');
-
-      if (document.getElementById('carrier').value == 'att') {
         liEl.textContent = yourResults();
-      }  else if (document.getElementById('carrier').value == 'verizon') {
-        liEl.textContent = yourResults();
-      } else if (document.getElementById('carrier').value == 't-mobile') {
-        liEl.textContent = yourResults();
-      } else if (document.getElementById('carrier').value == 'sprint') {
-        liEl.textContent = yourResults();
-      }
     });
   }
 };
