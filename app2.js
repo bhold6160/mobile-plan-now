@@ -30,8 +30,8 @@ var yourResults = function() {
     line.textContent = '5 lines';
   }
 
-var amount = document.getElementById('monthlyPayment').value;
-  monthlyPayment.textContent = '$' + amount;
+var amountOne = document.getElementById('monthlyPayment').value;
+  monthlyPayment.textContent = 'Your Plan: $' + amountOne;
 
   trEl.appendChild(carrier);
   trEl.appendChild(line);
@@ -39,6 +39,11 @@ var amount = document.getElementById('monthlyPayment').value;
   planTable.appendChild(trEl);
 
 };
+
+var att = new mobilePlan('AT&T',['$60','$115','$135','$155','$175']);
+var verizon= new mobilePlan('Verizon',['$80','$140','$160','$180','$230']);
+var tmobile = new mobilePlan('T-Mobile',['$70','$100','$140','$160','$180']);
+var sprint = new mobilePlan('Sprint',['$50','$90','$90','$90','$90']);
 
 function mobilePlan(name, plan) {
   this.name = name;
@@ -48,22 +53,30 @@ function mobilePlan(name, plan) {
 mobilePlan.prototype.renderAsRow = function() {
   var planTable = document.getElementById('planTable');
   var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
-  tdEl.textContent = 'Latest Plan:' + this.name;
-  trEl.appendChild(tdEl);
+  var line = document.createElement('td');
+  var comparePayment = document.createElement('td');
+  comparePayment.textContent = 'Latest Plan:';
+  trEl.appendChild(comparePayment);
+  trEl.appendChild(line);
   planTable.appendChild(trEl);
 
-  for (var i = 0; i < 4; i++)	{
-    // Get an element from li
-    var planPrice = document.createElement('td');
-    // Create and populate an LI element for each of the data points that you want to render
-    planPrice.textContent = this.plan[i];
-    // Append the li to ul
-    trEl.appendChild(planPrice);
-    planTable.appendChild(trEl);
+  if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'oneLine') {
+    carrier.textContent = 'AT&T';
+    line.textContent = att.plan[0];
+  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'twoLine') {
+    carrier.textContent = 'AT&T';
+    line.textContent = att.plan[1];
+  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'threeLine') {
+    carrier.textContent = 'AT&T';
+    line.textContent = att.plan[2];
+  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fourLine') {
+    carrier.textContent = 'AT&T';
+    line.textContent = att.plan[3];
+  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fiveLine') {
+    carrier.textContent = 'AT&T';
+    line.textContent = att.plan[4];
   }
-}
-
+};
 
 var comparePlan = {
   showResultsEl: document.getElementById('show-results'),
@@ -73,6 +86,7 @@ var comparePlan = {
       e.preventDefault();
       var liEl = document.createElement('li');
         liEl.textContent = yourResults();
+        liEl.textContent = att.renderAsRow();
     });
   }
 };
