@@ -6,9 +6,10 @@ var fourLine = new MobilePlan('4 lines', ['$360', '$470', '$580', '$960']);
 
 var table = document.getElementById('planTable');
 
-function MobilePlan(name, plan) {
+function MobilePlan(name, plan, price) {
   this.name = name;
   this.plan = plan;
+  this.price = price;
 
   // lineArr.push(this);
   // chartData.data.datasets[0].data.push(this);
@@ -21,7 +22,7 @@ function MobilePlan(name, plan) {
 // for (var i in parsedData) {
 //   productArr[i].votes = parsedData[i].votes;
 
-MobilePlan.prototype.renderAsRow = function() {
+MobilePlan.prototype.renderAsRow = function () {
   var planTable = document.getElementById('planTable');
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
@@ -77,6 +78,46 @@ var tracker = {
   // },
 };
 
+var form = document.getElementById('userForm');
+var table = document.getElementById('planTable');
+var createRowElement = document.createElement('tr');
+table.appendChild(createRowElement);
+
+// Generating new table for user input
+function generateTable() {
+  console.log(generateTable)
+  var name = document.createElement('td');
+  name.textContent = this.name;
+  createRowElement.appendChild(name);
+
+  // User number of lines
+  var plan = document.createElement('td');
+  plan.textContent = this.plan;
+  createRowElement.appendChild(plan);
+
+  // user Total
+  var price = document.createElement('td');
+  price.textContent = this.price;
+  createRowElement.appendChild(price);
+}
+
+// Form submit event
+function handleFormSubmit(event) {
+  event.preventDefault();
+  console.log(event);
+
+  var name = event.target.name.value;
+  var plan = parseFloat(event.target.plan.value);
+  var price = parseFloat(event.target.price.value);
+
+  var userPhone = new MobilePlan(name, plan, price);
+
+  event.target.name.value = null;
+  event.target.plan.value = null;
+  event.target.price.value = null;
+}
+
+form.addEventListener('submit', handleFormSubmit);
 tracker.checkClicks();
 
 // localStorage.getItem('stringfiedData');
