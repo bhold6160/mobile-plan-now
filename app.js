@@ -85,18 +85,18 @@ table.appendChild(createRowElement);
 
 // Generating new table for user input
 function generateTable() {
-  console.log(generateTable)
-  var name = document.createElement('td');
+  console.log('~~~~~~~~~~~~~');
+  var nameEl = document.createElement('td');
   name.textContent = this.name;
   createRowElement.appendChild(name);
 
   // User number of lines
-  var plan = document.createElement('td');
+  var planEl = document.createElement('td');
   plan.textContent = this.plan;
   createRowElement.appendChild(plan);
 
   // user Total
-  var price = document.createElement('td');
+  var priceEl = document.createElement('td');
   price.textContent = this.price;
   createRowElement.appendChild(price);
 }
@@ -104,7 +104,7 @@ function generateTable() {
 // Form submit event
 function handleFormSubmit(event) {
   event.preventDefault();
-  console.log(event);
+  console.log('~~~~~~~~~~~~');
 
   var name = event.target.name.value;
   var plan = parseFloat(event.target.plan.value);
@@ -117,7 +117,7 @@ function handleFormSubmit(event) {
   event.target.price.value = null;
 }
 
-form.addEventListener('submit', handleFormSubmit);
+// form.addEventListener('submit', handleFormSubmit);
 tracker.checkClicks();
 
 // localStorage.getItem('stringfiedData');
