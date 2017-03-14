@@ -1,67 +1,94 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="utf-8" />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
-    <title>MobilePlanNow</title>
-    <link rel="stylesheet" type="text/css" href=".css">
-  </head>
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <title>Mobile Plan Now</title>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+  <title>MobilePlanNow</title>
+  <link rel="stylesheet" type="text/css" href=".css">
+</head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Mobile Plan Now</title>
+</head>
+<body>
 
-    <div class="wrapper">
-      <div class="flex-container">
-        <div class="flex-container-two">
-          <div class="box one">
-            <header>
-              <ul>
-                <li class="nav"><a href="about.html">About</a></li>
-                <li class="nav"><a href="index.html">Compair</a></li>
-                <li class="nav"><a href="chart.html">Graph</a></li>
-                <li id="battery"><img src="battery.png"</li>
-              </ul>
-            </header>
-          </div>
+  <div class="wrapper">
+    <div class="flex-container">
+      <div class="flex-container-two">
 
-          <!-- <main> -->
-          <div class="box two">
-            <h1>How many lines do you need?</h1>
-          </div>
-          <div class="box three">
-          <select name="select" id="select">
-            <option id="choose" value= "choose">Select Your Number of Lines</option>
-              <div class="select">
-                <option id="oneLine" value="oneLine" class="line">1 line</option>
-                <option id="twoLine" value="twoLine" class="line">2 lines</option>
-                <option id="threeLine" value="threeLine"class="line">3 lines</option>
-                <option id="fourLine" value="fourLine" class="line">4 lines</option>
-              </div>
-          </select>
+
+        <div class="box one">
+          <header>
+            <ul>
+              <li class="nav"><a href="about.html">About</a></li>
+              <li class="nav"><a href="index.html">Compare</a></li>
+              <li class="nav"><a href="chart.html">Graph</a></li>
+              <li id="battery"><img src="battery.png"</li>
+            </ul>
+          </header>
         </div>
-          <div class="box four">
-            <div id = "chart" class="results">
-              <table id = "planTable">
-                <tr id = "tableTitle">
-                <th></th>
+
+
+        <!-- <main> -->
+        <div class="box two">
+          <h1>How much do you pay right now?</h1>
+          <h2>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from all carriers. </h2>
+        </div>
+
+
+        <div class= "box three">
+          <form id="form">
+            <fieldset>
+
+              <label >Carrier:</label>
+              <select name="carrier" id="carrier" class="dropdown">
+                <option id="att" value="att">AT&amp;T</option>
+                <option id="verizon" value="verizon">Verizon</option>
+                <option id="t-mobile" value="t-mobile">T-Mobile</option>
+                <option id="sprint" value="sprint">Sprint</option>
+              </select>
+
+              <label>Number of line:</label>
+              <select name="lines" id="lines" class="dropdown">
+                <option id="oneLine" value="oneLine">1 line</option>
+                <option id="twoLine" value="twoLine">2 lines</option>
+                <option id="threeLine" value="threeLine">3 lines</option>
+                <option id="fourLine" value="fourLine">4 lines</option>
+                <option id="fiveLine" value="fiveLine">5 lines</option>
+              </select>
+
+              <label for="monthlyPayment">Monthly Payment($):</label>
+              <input type="number" id="monthlyPayment" min="0" max="1000" required>
+
+              <input type="submit" value="submit" id="show-results">
+            </fieldset>
+          </form>
+        </div>
+
+
+
+
+        <div class="box four">
+          <div id = "chart" class="results">
+            <table id = "planTable">
+              <tr id = "tableTitle">
+                <!-- <th></th>
                 <th>AT&amp;T </th>
                 <th>Verizon</th>
                 <th>T-Mobile</th>
-                <th>Sprint</th>
+                <th>Sprint</th> -->
               </tr>
             </table>
-        <tr id = "results">
+            <tr id = 'results'>
+            </div>
+
+
+            <!-- </main> -->
+
+
+          </div>
         </div>
-
-
-        <!-- </main> -->
-
-
-    </div>
-  </div>
-  <script type="text/javascript" src="app.js"></script>
-  </body>
-  </html>
+        <script type="text/javascript" src="app2.js"></script>
+      </body>
+      </html>

@@ -74,6 +74,16 @@ padding-left: 373px;
 h1{
       color: #2EDB31;
 }
+h2{
+  color: 60584a;
+font-size: 16px;
+width: 450px;
+justify-content: center;
+text-align: center;
+padding-right: 21px;
+display: flex;
+padding-left: 100px;
+}
 .two{
   /*background: blue;*/
 
@@ -100,7 +110,7 @@ h1{
 }
 .six{
   align-items: flex-start;
-  color: #2EDB31;
+  color: ##3d3930;
 
 }
 p{
@@ -139,7 +149,7 @@ color: #fff;
   flex-direction: row;
 }
 
-table{
+tr{
   justify-content: center;
       border-style: solid;
       background-color: #30294E;
@@ -155,7 +165,7 @@ td{
 
 
 /* Dropdown Button */
-#select {
+fieldset{
   background-color: orange;
     color: white;
     padding: 10px;
@@ -173,8 +183,8 @@ td{
 }
 
 /* Dropdown Content (Hidden by Default) */
-.line {
-  background-color: #2EDB31;
+.dropdown{
+  /*background-color: #2EDB31;*/
 }
 
 /* Links inside the dropdown */
@@ -190,3 +200,8 @@ td{
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+
+#imageOne{
+  max-width: 100px;
+}
