@@ -86,7 +86,7 @@ var comparePlan = {
       e.preventDefault();
       var liEl = document.createElement('li');
         liEl.textContent = yourResults();
-        liEl.textContent = att.renderAsRow();
+        liEl.textContent =  att.renderAsRow();
     });
   }
 };
