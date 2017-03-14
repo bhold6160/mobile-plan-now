@@ -33,7 +33,6 @@ mobilePlan.prototype.renderAsRow = function() {
   }
 }
 
-
 var tracker = {
   showResultsEl: document.getElementById('show-results'),
   resultsEl: document.getElementById('results'),
