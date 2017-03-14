@@ -40,17 +40,59 @@ var amountOne = document.getElementById('monthlyPayment').value;
 
 };
 
-var att = new mobilePlan('AT&T',['$60','$115','$135','$155','$175']);
-var verizon= new mobilePlan('Verizon',['$80','$140','$160','$180','$230']);
-var tmobile = new mobilePlan('T-Mobile',['$70','$100','$140','$160','$180']);
-var sprint = new mobilePlan('Sprint',['$50','$90','$90','$90','$90']);
+var att = ['$60','$115','$135','$155','$175'];
+var verizon= ['$80','$140','$160','$180','$230'];
+var tmobile = ['$70','$100','$140','$160','$180'];
+var sprint = ['$50','$90','$90','$90','$90'];
 
-function mobilePlan(name, plan) {
-  this.name = name;
-  this.plan = plan;
+var comparePlan = {
+  showResultsEl: document.getElementById('carrier'),
+
+  checkSelectOne: function() {
+    this.showResultsEl.addEventListener('change', function(e){
+      e.preventDefault();
+      if (document.getElementById('carrier').value == 'chooseCarrier') {
+
+      } else if (document.getElementById('carrier').value == 'att') {
+        console.log('att');
+      } else if (document.getElementById('carrier').value == 'verizon') {
+        console.log('verizon');
+      } else if (document.getElementById('carrier').value == 'tmobile') {
+        console.log('tmobile');
+      } else if (document.getElementById('carrier').value == 'sprint') {
+        console.log('sprint');
+      }
+    });
+  }
 };
+comparePlan.checkSelectOne();
 
-mobilePlan.prototype.renderAsRow = function() {
+var selectLines = {
+  showResultsEl: document.getElementById('lines'),
+
+  checkSelectTwo: function() {
+    this.showResultsEl.addEventListener('change', function(e){
+      e.preventDefault();
+      if (document.getElementById('lines').value == 'chooseLine') {
+
+      } else if (document.getElementById('lines').value == 'oneLine') {
+        console.log('1 lines');
+      } else if (document.getElementById('lines').value == 'twoLine') {
+        console.log('2 lines');
+      } else if (document.getElementById('lines').value == 'threeLine') {
+        console.log('3 lines');
+      } else if (document.getElementById('lines').value == 'fourLine') {
+        console.log('4 lines');
+      } else if (document.getElementById('lines').value == 'fiveLine') {
+        console.log('5 lines');
+      }
+    });
+  }
+};
+selectLines.checkSelectTwo();
+
+
+var renderAsRow = function() {
   var planTable = document.getElementById('planTable');
   var trEl = document.createElement('tr');
   var line = document.createElement('td');
@@ -60,21 +102,10 @@ mobilePlan.prototype.renderAsRow = function() {
   trEl.appendChild(line);
   planTable.appendChild(trEl);
 
-  if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'oneLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[0];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'twoLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[1];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'threeLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[2];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fourLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[3];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fiveLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[4];
+  if (document.getElementById('carrier').value == 'att'){
+    line.textContent = mobilePlan.plan;
+  } else if (document.getElementById('carrier').value == 'verizon'){
+    line.textContent = productsArray[1];
   }
 };
 
@@ -86,7 +117,6 @@ var comparePlan = {
       e.preventDefault();
       var liEl = document.createElement('li');
         liEl.textContent = yourResults();
-        liEl.textContent =  att.renderAsRow();
     });
   }
 };
