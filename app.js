@@ -78,44 +78,44 @@ var tracker = {
   // },
 };
 
-var form = document.getElementById('userForm');
-var table = document.getElementById('planTable');
-var createRowElement = document.createElement('tr');
-table.appendChild(createRowElement);
-
-// Generating new table for user input
-function generateTable() {
-  console.log('~~~~~~~~~~~~~');
-  var nameEl = document.createElement('td');
-  name.textContent = this.name;
-  createRowElement.appendChild(name);
-
-  // User number of lines
-  var planEl = document.createElement('td');
-  plan.textContent = this.plan;
-  createRowElement.appendChild(plan);
-
-  // user Total
-  var priceEl = document.createElement('td');
-  price.textContent = this.price;
-  createRowElement.appendChild(price);
-}
-
-// Form submit event
-function handleFormSubmit(event) {
-  event.preventDefault();
-  console.log('~~~~~~~~~~~~');
-
-  var name = event.target.name.value;
-  var plan = parseFloat(event.target.plan.value);
-  var price = parseFloat(event.target.price.value);
-
-  var userPhone = new MobilePlan(name, plan, price);
-
-  event.target.name.value = null;
-  event.target.plan.value = null;
-  event.target.price.value = null;
-}
+// var form = document.getElementById('form');
+// var table = document.getElementById('table');
+// var createRowElement = document.createElement('tr');
+// table.appendChild(createRowElement);
+//
+// // Generating new table for user input
+// function generateTable() {
+//   console.log('~~~~~~~~~~~~~');
+//   var nameEl = document.createElement('td');
+//   name.textContent = this.name;
+//   createRowElement.appendChild(name);
+//
+//   // User number of lines
+//   var planEl = document.createElement('td');
+//   plan.textContent = this.plan;
+//   createRowElement.appendChild(plan);
+//
+//   // user Total
+//   var priceEl = document.createElement('td');
+//   price.textContent = this.price;
+//   createRowElement.appendChild(price);
+// }
+//
+// // Form submit event
+// function handleFormSubmit(event) {
+//   event.preventDefault();
+//   console.log('~~~~~~~~~~~~');
+//
+//   var name = event.target.name.value;
+//   var plan = parseFloat(event.target.plan.value);
+//   var price = parseFloat(event.target.price.value);
+//
+//   var userPhone = new MobilePlan(name, plan, price);
+//
+//   event.target.name.value = null;
+//   event.target.plan.value = null;
+//   event.target.price.value = null;
+// }
 
 // form.addEventListener('submit', handleFormSubmit);
 tracker.checkClicks();

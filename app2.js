@@ -1,43 +1,3 @@
-
-var yourResults = function () {
-  var planTable = document.getElementById('table');
-  var trEl = document.createElement('tr');
-  var carrier = document.createElement('td');
-  var line = document.createElement('td');
-  var monthlyPayment = document.createElement('td');
-
-  if (document.getElementById('carrier')) {
-    carrier.textContent = 'AT&T';
-  }  else if (document.getElementById('carrier')) {
-    carrier.textContent = 'Verizon';
-  } else if (document.getElementById('carrier')) {
-    carrier.textContent = 'T-Mobile';
-  } else if (document.getElementById('carrier')) {
-    carrier.textContent = 'Sprint';
-  }
-
-  if (document.getElementById('lines')) {
-    line.textContent = '1 line';
-  }  else if (document.getElementById('lines')) {
-    line.textContent = '2 lines';
-  } else if (document.getElementById('lines')) {
-    line.textContent = '3 lines';
-  } else if (document.getElementById('lines')) {
-    line.textContent = '4 lines';
-  } else if (document.getElementById('lines')) {
-    line.textContent = '5 lines';
-  }
-
-  var amountOne = document.getElementById('monthlyPayment').value;
-  monthlyPayment.textContent = 'Your Plan: $' + amountOne;
-
-  trEl.appendChild(carrier);
-  trEl.appendChild(line);
-  trEl.appendChild(monthlyPayment);
-  tableBody.appendChild(trEl);
-
-};
-
 var mobileArr = [];
 var att = new MobilePlan('AT&T', ['$60', '$115', '$135', '$155', '$175']);
 var verizon = new MobilePlan('Verizon', ['$80', '$140', '$160', '$180', '$230']);
@@ -52,16 +12,40 @@ function MobilePlan(name, plan) {
   console.log(mobileArr);
 };
 
+var yourResults = function () {
+  var planTable = document.getElementById('table');
+  var trEl = document.createElement('tr');
+  var carrier = document.createElement('td');
+  var line = document.createElement('td');
+  var monthlyPayment = document.createElement('td');
+
+  if (document.getElementById('carrier')) {
+    carrier.textContent = this.name;
+  }
+
+  if (document.getElementById('lines')) {
+    line.textContent = this.plan;
+  }
+
+  var amountOne = document.getElementById('monthlyPayment').value;
+  monthlyPayment.textContent = 'Your Plan: $' + amountOne;
+
+  trEl.appendChild(carrier);
+  trEl.appendChild(line);
+  trEl.appendChild(monthlyPayment);
+  table.appendChild(trEl);
+};
+
 // Appending comparison to user input
 MobilePlan.prototype.renderAsRow = function () {
-    var planTable = document.getElementById('planTable');
+    var planTable = document.getElementById('table');
     var trEl = document.createElement('tr');
     var line = document.createElement('td');
     var comparePayment = document.createElement('td');
-    comparePayment.textContent = this.name + ' ' + 'Current Price: ';
+    comparePayment.textContent = 'Latest Plan:';
     trEl.appendChild(comparePayment);
     trEl.appendChild(line);
-    tableBody.appendChild(trEl);
+    table.appendChild(trEl);
 
     for (var i in mobileArr) {
       var carrier = document.getElementById('carrier');
@@ -85,77 +69,32 @@ var comparePlan = {
       liEl.textContent = mobileArr[0].renderAsRow();
     });
   },
-
-  checkClicks: function () {
-    this.showResultsEl.addEventListener('click', function (e) {
-      e.preventDefault();
-      var liEl = document.createElement('li');
-      liEl.textContent = yourResults();
-      liEl.textContent = mobileArr[1].renderAsRow();
-    });
-  },
 };
 
+// var tracker = {
+//   selectEl: document.getElementById('select'),
+//
+//   checkClicks: function () {
+//     this.selectEl.addEventListener('change', function (e) {
+//       // e.preventDefault();
+//       var liEl = document.createElement('li');
+//       if (document.getElementById('select').value == 'choose') {
+//
+//       } else if (document.getElementById('select').value == 'oneLine') {
+//         console.log('oneLine');
+//         liEl.textContent = oneLine.renderAsRow();
+//       } else if (document.getElementById('select').value == 'twoLine') {
+//         console.log('twoLine');
+//         liEl.textContent = twoLine.renderAsRow();
+//       } else if (document.getElementById('select').value == 'threeLine') {
+//         console.log('threeLine');
+//         liEl.textContent = threeLine.renderAsRow();
+//       } else if (document.getElementById('select').value == 'fourLine') {
+//         console.log('fourLine');
+//         liEl.textContent = fourLine.renderAsRow();
+//       }
+//     });
+//   },
+// };
+
 comparePlan.checkClicks();
-
-// var allItems = [];
-
-// var form = document.getElementById('form');
-// var table = document.getElementById('table');
-// var tbody = document.getElementById('tableBody');
-// // var tfoot = document.getElementsByTagName('tfoot')[0];
-//
-// // function Item(name, line, price) {
-// //   this.name = name;
-// //   this.line = line;
-// //   this.price = price;
-// //
-// //   allItems.push(this);
-// // }
-//
-// function makeItemRow(obj) {
-//   var row = document.createElement('tr');
-//
-//   var nameCell = document.createElement('td');
-//   nameCell.textContent = obj.name;
-//   row.appendChild(nameCell);
-//
-//   var priceCell = document.createElement('td');
-//   priceCell.textContent = obj.price;
-//   row.appendChild(priceCell);
-//
-//   var taxCell = document.createElement('td');
-//   taxCell.textContent = obj.line;
-//   row.appendChild(taxCell);
-//
-//   tbody.appendChild(row);
-// }
-//
-// function makeAllItemRows() {
-//   for (var item of mobileArr) {
-//     makeItemRow(item);
-//   }
-// }
-//
-// function handleFormSubmit(event) {
-//   event.preventDefault();
-//   console.log(event);
-//
-//   var name = event.target.name.value;
-//   var plan = event.target.plan.value;
-//   // var price = event.target.price.value;
-//
-//   var newPlan = new MobilePlan(name, plan);
-//
-//   makeItemRow(newPlan);
-//   tfoot.innerHTML = '';
-//
-//   event.target.name.value = null;
-//   event.target.plan.value = null;
-//   // event.target.price.value = null;
-//
-// }
-//
-// form.addEventListener('submit', handleFormSubmit);
-//
-// makeAllItemRows();
