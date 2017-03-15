@@ -1,93 +1,176 @@
-'use strict'
-var table = document.getElementById('planTable');
+// 'use strict'
+// var table = document.getElementById('planTable');
+//
+// var yourResults = function() {
+//   var planTable = document.getElementById('planTable');
+//   var trEl = document.createElement('tr');
+//   var carrier = document.createElement('td');
+//   var line = document.createElement('td');
+//   var monthlyPayment = document.createElement('td');
+//
+//   if (document.getElementById('carrier').value == 'att') {
+//     carrier.textContent = 'AT&T';
+//   }  else if (document.getElementById('carrier').value == 'verizon') {
+//     carrier.textContent = 'Verizon';
+//   } else if (document.getElementById('carrier').value == 't-mobile') {
+//     carrier.textContent = 'T-Mobile';
+//   } else if (document.getElementById('carrier').value == 'sprint') {
+//     carrier.textContent = 'Sprint';
+//   }
+//
+//   if (document.getElementById('lines').value == 'oneLine') {
+//     line.textContent = '1 line';
+//   }  else if (document.getElementById('lines').value == 'twoLine') {
+//     line.textContent = '2 lines';
+//   } else if (document.getElementById('lines').value == 'threeLine') {
+//     line.textContent = '3 lines';
+//   } else if (document.getElementById('lines').value == 'fourLine') {
+//     line.textContent = '4 lines';
+//   } else if (document.getElementById('lines').value == 'fiveLine') {
+//     line.textContent = '5 lines';
+//   }
+//
+// var amountOne = document.getElementById('monthlyPayment').value;
+//   monthlyPayment.textContent = 'Your Plan: $' + amountOne;
+//
+//   trEl.appendChild(carrier);
+//   trEl.appendChild(line);
+//   trEl.appendChild(monthlyPayment);
+//   planTable.appendChild(trEl);
+//
+// };
+//
+// var att = new mobilePlan('AT&T',['$60','$115','$135','$155','$175']);
+// var verizon= new mobilePlan('Verizon',['$80','$140','$160','$180','$230']);
+// var tmobile = new mobilePlan('T-Mobile',['$70','$100','$140','$160','$180']);
+// var sprint = new mobilePlan('Sprint',['$50','$90','$90','$90','$90']);
+//
+// function mobilePlan(name, plan) {
+//   this.name = name;
+//   this.plan = plan;
+// };
+//
+// mobilePlan.prototype.renderAsRow = function() {
+//   var planTable = document.getElementById('planTable');
+//   var trEl = document.createElement('tr');
+//   var line = document.createElement('td');
+//   var comparePayment = document.createElement('td');
+//   comparePayment.textContent = 'Latest Plan:';
+//   trEl.appendChild(comparePayment);
+//   trEl.appendChild(line);
+//   planTable.appendChild(trEl);
+//
+//   if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'oneLine') {
+//     carrier.textContent = 'AT&T';
+//     line.textContent = att.plan[0];
+//   } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'twoLine') {
+//     carrier.textContent = 'AT&T';
+//     line.textContent = att.plan[1];
+//   } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'threeLine') {
+//     carrier.textContent = 'AT&T';
+//     line.textContent = att.plan[2];
+//   } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fourLine') {
+//     carrier.textContent = 'AT&T';
+//     line.textContent = att.plan[3];
+//   } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fiveLine') {
+//     carrier.textContent = 'AT&T';
+//     line.textContent = att.plan[4];
+//   }
+// };
+//
+// var comparePlan = {
+//   showResultsEl: document.getElementById('show-results'),
+//
+//   checkClicks: function() {
+//     this.showResultsEl.addEventListener('click', function(e){
+//       e.preventDefault();
+//       var liEl = document.createElement('li');
+//         liEl.textContent = yourResults();
+//         liEl.textContent = att.renderAsRow();
+//     });
+//   }
+// };
+// comparePlan.checkClicks();
+//
 
-var yourResults = function() {
-  var planTable = document.getElementById('planTable');
-  var trEl = document.createElement('tr');
-  var carrier = document.createElement('td');
-  var line = document.createElement('td');
-  var monthlyPayment = document.createElement('td');
 
-  if (document.getElementById('carrier').value == 'att') {
-    carrier.textContent = 'AT&T';
-  }  else if (document.getElementById('carrier').value == 'verizon') {
-    carrier.textContent = 'Verizon';
-  } else if (document.getElementById('carrier').value == 't-mobile') {
-    carrier.textContent = 'T-Mobile';
-  } else if (document.getElementById('carrier').value == 'sprint') {
-    carrier.textContent = 'Sprint';
-  }
+//ixs turn//
 
-  if (document.getElementById('lines').value == 'oneLine') {
-    line.textContent = '1 line';
-  }  else if (document.getElementById('lines').value == 'twoLine') {
-    line.textContent = '2 lines';
-  } else if (document.getElementById('lines').value == 'threeLine') {
-    line.textContent = '3 lines';
-  } else if (document.getElementById('lines').value == 'fourLine') {
-    line.textContent = '4 lines';
-  } else if (document.getElementById('lines').value == 'fiveLine') {
-    line.textContent = '5 lines';
-  }
+//lets make a constructor function for the form//
 
-var amountOne = document.getElementById('monthlyPayment').value;
-  monthlyPayment.textContent = 'Your Plan: $' + amountOne;
+// var PikePlace = new comparePlan ('Pike Place','77','88');
+//
+// var table = document.getElementById('planTable');
 
-  trEl.appendChild(carrier);
-  trEl.appendChild(line);
-  trEl.appendChild(monthlyPayment);
-  planTable.appendChild(trEl);
+'use strict';
 
-};
+var allItems = [];
 
-var att = new mobilePlan('AT&T',['$60','$115','$135','$155','$175']);
-var verizon= new mobilePlan('Verizon',['$80','$140','$160','$180','$230']);
-var tmobile = new mobilePlan('T-Mobile',['$70','$100','$140','$160','$180']);
-var sprint = new mobilePlan('Sprint',['$50','$90','$90','$90','$90']);
+var form = document.getElementById('form');
+var button = document.getElementById('fun-button');
 
-function mobilePlan(name, plan) {
+var table = document.getElementById('table');
+var tbody = document.getElementById('table-body');
+var tfoot = document.getElementsByTagName('tfoot')[0];
+
+
+function Item(name,line, price) {
   this.name = name;
-  this.plan = plan;
-};
+  this.line = line;
+  this.price = price;
 
-mobilePlan.prototype.renderAsRow = function() {
-  var planTable = document.getElementById('planTable');
-  var trEl = document.createElement('tr');
-  var line = document.createElement('td');
-  var comparePayment = document.createElement('td');
-  comparePayment.textContent = 'Latest Plan:';
-  trEl.appendChild(comparePayment);
-  trEl.appendChild(line);
-  planTable.appendChild(trEl);
+  allItems.push(this);
+}
 
-  if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'oneLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[0];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'twoLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[1];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'threeLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[2];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fourLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[3];
-  } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == 'fiveLine') {
-    carrier.textContent = 'AT&T';
-    line.textContent = att.plan[4];
+
+function makeItemRow(obj) {
+  var row = document.createElement('tr');
+
+  var nameCell = document.createElement('td');
+  nameCell.textContent = obj.name;
+  row.appendChild(nameCell);
+
+  var priceCell = document.createElement('td');
+  priceCell.textContent = obj.price;
+  row.appendChild(priceCell);
+
+  var taxCell = document.createElement('td');
+  taxCell.textContent = obj.line;
+  row.appendChild(taxCell);
+
+  tbody.appendChild(row);
+}
+
+function makeAllItemRows() {
+  for (var item of allItems) {
+    makeItemRow(item);
   }
-};
+}
 
-var comparePlan = {
-  showResultsEl: document.getElementById('show-results'),
 
-  checkClicks: function() {
-    this.showResultsEl.addEventListener('click', function(e){
-      e.preventDefault();
-      var liEl = document.createElement('li');
-        liEl.textContent = yourResults();
-        liEl.textContent = att.renderAsRow();
-    });
-  }
-};
-comparePlan.checkClicks();
+function handleFormSubmit(event) {
+  event.preventDefault();
+  console.log(event);
+
+  var name = event.target.name.value;
+  var line = event.target.line.value;
+  var price = event.target.price.value;
+
+
+  var newItem = new Item(name, line,price);
+
+  makeItemRow(newItem);
+  tfoot.innerHTML = ''
+
+  event.target.name.value = null;
+  event.target.line.value = null;
+  event.target.price.value = null;
+
+}
+
+form.addEventListener('submit', handleFormSubmit);
+
+makeAllItemRows();
+
+
+/////////////kenny///
