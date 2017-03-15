@@ -58,7 +58,7 @@ MobilePlan.prototype.renderAsRow = function () {
     var trEl = document.createElement('tr');
     var line = document.createElement('td');
     var comparePayment = document.createElement('td');
-    comparePayment.textContent = 'Latest Plan:';
+    comparePayment.textContent = this.name + ' ' + 'Current Price: ';
     trEl.appendChild(comparePayment);
     trEl.appendChild(line);
     planTable.appendChild(trEl);
@@ -82,9 +82,74 @@ var comparePlan = {
       e.preventDefault();
       var liEl = document.createElement('li');
       liEl.textContent = yourResults();
-      liEl.textContent = mobileArr[0].renderAsRow();
+      liEl.textContent = mobileArr[1].renderAsRow();
     });
   },
 };
 
 comparePlan.checkClicks();
+
+var allItems = [];
+
+var form = document.getElementById('form');
+
+// var button = document.getElementById('fun-button');
+
+var table = document.getElementById('planTable');
+var tbody = document.getElementById('tableTitle');
+var tfoot = document.getElementsByTagName('tfoot')[0];
+
+function Item(name, line, price) {
+  this.name = name;
+  this.line = line;
+  this.price = price;
+
+  allItems.push(this);
+}
+
+function makeItemRow(obj) {
+  var row = document.createElement('tr');
+
+  var nameCell = document.createElement('td');
+  nameCell.textContent = obj.name;
+  row.appendChild(nameCell);
+
+  var priceCell = document.createElement('td');
+  priceCell.textContent = obj.price;
+  row.appendChild(priceCell);
+
+  var taxCell = document.createElement('td');
+  taxCell.textContent = obj.line;
+  row.appendChild(taxCell);
+
+  tbody.appendChild(row);
+}
+
+function makeAllItemRows() {
+  for (var item of allItems) {
+    makeItemRow(item);
+  }
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  console.log(event);
+
+  var name = event.target.name.value;
+  var line = event.target.line.value;
+  var price = event.target.price.value;
+
+  var newItem = new Item(name, line, price);
+
+  makeItemRow(newItem);
+  tfoot.innerHTML = '';
+
+  event.target.name.value = null;
+  event.target.line.value = null;
+  event.target.price.value = null;
+
+}
+
+form.addEventListener('submit', handleFormSubmit);
+
+makeAllItemRows();
