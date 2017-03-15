@@ -29,25 +29,25 @@
         <legend>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from all carriers. </legend>
         <label>Carrier:</label>
         <select name="carrier" id="carrier">
-          <option id="att" value="att">AT&amp;T</option>
-          <option id="verizon" value="verizon">Verizon</option>
-          <option id="t-mobile" value="t-mobile">T-Mobile</option>
-          <option id="sprint" value="sprint">Sprint</option>
+          <option id="att">AT&amp;T</option>
+          <option id="verizon">Verizon</option>
+          <option id="t-mobile">T-Mobile</option>
+          <option id="sprint">Sprint</option>
         </select>
 
         <label>Number of line:</label>
         <select name="lines" id="lines">
-          <option id="oneLine" value="oneLine">1 line</option>
-          <option id="twoLine" value="twoLine">2 lines</option>
-          <option id="threeLine" value="threeLine">3 lines</option>
-          <option id="fourLine" value="fourLine">4 lines</option>
-          <option id="fiveLine" value="fiveLine">5 lines</option>
+          <option id="oneLine">1 line</option>
+          <option id="twoLine">2 lines</option>
+          <option id="threeLine">3 lines</option>
+          <option id="fourLine">4 lines</option>
+          <option id="fiveLine">5 lines</option>
         </select>
 
         <label for="monthlyPayment">Monthly Payment($):</label>
         <input type="number" id="monthlyPayment" min="0" max="1000" required>
 
-        <input type="submit" value="submit" id="show-results">
+        <input type="submit" id="show-results">
       </fieldset>
     </form>
   </section>
@@ -55,11 +55,6 @@
   <div id = "chart">
     <table id = 'table'>
       <tr id = 'tableTitle'>
-        <!-- <th></th>
-        <th>AT&amp;T </th>
-        <th>Verizon</th>
-        <th>T-Mobile</th>
-        <th>Sprint</th> -->
       </tr>
     </table>
     <tr id = 'results'>

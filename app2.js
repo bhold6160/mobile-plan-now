@@ -1,3 +1,5 @@
+var nameArr = [];
+var lineArr = [];
 var mobileArr = [];
 var att = new MobilePlan('AT&T', ['$60', '$115', '$135', '$155', '$175']);
 var verizon = new MobilePlan('Verizon', ['$80', '$140', '$160', '$180', '$230']);
@@ -12,7 +14,7 @@ function MobilePlan(name, plan) {
   console.log(mobileArr);
 };
 
-var yourResults = function () {
+this.yourResults = function () {
   var planTable = document.getElementById('table');
   var trEl = document.createElement('tr');
   var carrier = document.createElement('td');
@@ -24,7 +26,7 @@ var yourResults = function () {
   }
 
   if (document.getElementById('lines')) {
-    line.textContent = this.plan;
+    line.textContent = '1 line';
   }
 
   var amountOne = document.getElementById('monthlyPayment').value;
@@ -42,7 +44,7 @@ MobilePlan.prototype.renderAsRow = function () {
     var trEl = document.createElement('tr');
     var line = document.createElement('td');
     var comparePayment = document.createElement('td');
-    comparePayment.textContent = 'Latest Plan:';
+    comparePayment.textContent = this.name;
     trEl.appendChild(comparePayment);
     trEl.appendChild(line);
     table.appendChild(trEl);
@@ -51,10 +53,6 @@ MobilePlan.prototype.renderAsRow = function () {
       var carrier = document.getElementById('carrier');
       carrier.textContent = this.name;
       line.textContent = this.plan;
-
-      // for (var i in mobileArr) {
-      //   var lineArr =
-      // }
     }
   };
 
@@ -78,18 +76,18 @@ var comparePlan = {
 //     this.selectEl.addEventListener('change', function (e) {
 //       // e.preventDefault();
 //       var liEl = document.createElement('li');
-//       if (document.getElementById('select').value == 'choose') {
+//       if (document.getElementById('select')) {
 //
-//       } else if (document.getElementById('select').value == 'oneLine') {
+//       } else if (document.getElementById('select')) {
 //         console.log('oneLine');
 //         liEl.textContent = oneLine.renderAsRow();
-//       } else if (document.getElementById('select').value == 'twoLine') {
+//       } else if (document.getElementById('select')) {
 //         console.log('twoLine');
 //         liEl.textContent = twoLine.renderAsRow();
-//       } else if (document.getElementById('select').value == 'threeLine') {
+//       } else if (document.getElementById('select')) {
 //         console.log('threeLine');
 //         liEl.textContent = threeLine.renderAsRow();
-//       } else if (document.getElementById('select').value == 'fourLine') {
+//       } else if (document.getElementById('select')) {
 //         console.log('fourLine');
 //         liEl.textContent = fourLine.renderAsRow();
 //       }
