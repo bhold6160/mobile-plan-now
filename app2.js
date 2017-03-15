@@ -1,6 +1,6 @@
 
 var yourResults = function () {
-  var planTable = document.getElementById('planTable');
+  var planTable = document.getElementById('table');
   var trEl = document.createElement('tr');
   var carrier = document.createElement('td');
   var line = document.createElement('td');
@@ -34,7 +34,7 @@ var yourResults = function () {
   trEl.appendChild(carrier);
   trEl.appendChild(line);
   trEl.appendChild(monthlyPayment);
-  planTable.appendChild(trEl);
+  tableBody.appendChild(trEl);
 
 };
 
@@ -61,7 +61,7 @@ MobilePlan.prototype.renderAsRow = function () {
     comparePayment.textContent = this.name + ' ' + 'Current Price: ';
     trEl.appendChild(comparePayment);
     trEl.appendChild(line);
-    planTable.appendChild(trEl);
+    tableBody.appendChild(trEl);
 
     for (var i in mobileArr) {
       var carrier = document.getElementById('carrier');
@@ -82,6 +82,15 @@ var comparePlan = {
       e.preventDefault();
       var liEl = document.createElement('li');
       liEl.textContent = yourResults();
+      liEl.textContent = mobileArr[0].renderAsRow();
+    });
+  },
+
+  checkClicks: function () {
+    this.showResultsEl.addEventListener('click', function (e) {
+      e.preventDefault();
+      var liEl = document.createElement('li');
+      liEl.textContent = yourResults();
       liEl.textContent = mobileArr[1].renderAsRow();
     });
   },
@@ -89,67 +98,64 @@ var comparePlan = {
 
 comparePlan.checkClicks();
 
-var allItems = [];
+// var allItems = [];
 
-var form = document.getElementById('form');
-
-// var button = document.getElementById('fun-button');
-
-var table = document.getElementById('planTable');
-var tbody = document.getElementById('tableTitle');
-var tfoot = document.getElementsByTagName('tfoot')[0];
-
-function Item(name, line, price) {
-  this.name = name;
-  this.line = line;
-  this.price = price;
-
-  allItems.push(this);
-}
-
-function makeItemRow(obj) {
-  var row = document.createElement('tr');
-
-  var nameCell = document.createElement('td');
-  nameCell.textContent = obj.name;
-  row.appendChild(nameCell);
-
-  var priceCell = document.createElement('td');
-  priceCell.textContent = obj.price;
-  row.appendChild(priceCell);
-
-  var taxCell = document.createElement('td');
-  taxCell.textContent = obj.line;
-  row.appendChild(taxCell);
-
-  tbody.appendChild(row);
-}
-
-function makeAllItemRows() {
-  for (var item of allItems) {
-    makeItemRow(item);
-  }
-}
-
-function handleFormSubmit(event) {
-  event.preventDefault();
-  console.log(event);
-
-  var name = event.target.name.value;
-  var line = event.target.line.value;
-  var price = event.target.price.value;
-
-  var newItem = new Item(name, line, price);
-
-  makeItemRow(newItem);
-  tfoot.innerHTML = '';
-
-  event.target.name.value = null;
-  event.target.line.value = null;
-  event.target.price.value = null;
-
-}
-
-form.addEventListener('submit', handleFormSubmit);
-
-makeAllItemRows();
+// var form = document.getElementById('form');
+// var table = document.getElementById('table');
+// var tbody = document.getElementById('tableBody');
+// // var tfoot = document.getElementsByTagName('tfoot')[0];
+//
+// // function Item(name, line, price) {
+// //   this.name = name;
+// //   this.line = line;
+// //   this.price = price;
+// //
+// //   allItems.push(this);
+// // }
+//
+// function makeItemRow(obj) {
+//   var row = document.createElement('tr');
+//
+//   var nameCell = document.createElement('td');
+//   nameCell.textContent = obj.name;
+//   row.appendChild(nameCell);
+//
+//   var priceCell = document.createElement('td');
+//   priceCell.textContent = obj.price;
+//   row.appendChild(priceCell);
+//
+//   var taxCell = document.createElement('td');
+//   taxCell.textContent = obj.line;
+//   row.appendChild(taxCell);
+//
+//   tbody.appendChild(row);
+// }
+//
+// function makeAllItemRows() {
+//   for (var item of mobileArr) {
+//     makeItemRow(item);
+//   }
+// }
+//
+// function handleFormSubmit(event) {
+//   event.preventDefault();
+//   console.log(event);
+//
+//   var name = event.target.name.value;
+//   var plan = event.target.plan.value;
+//   // var price = event.target.price.value;
+//
+//   var newPlan = new MobilePlan(name, plan);
+//
+//   makeItemRow(newPlan);
+//   tfoot.innerHTML = '';
+//
+//   event.target.name.value = null;
+//   event.target.plan.value = null;
+//   // event.target.price.value = null;
+//
+// }
+//
+// form.addEventListener('submit', handleFormSubmit);
+//
+// makeAllItemRows();
