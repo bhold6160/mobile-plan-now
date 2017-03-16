@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+  <title>MobilePlanNow</title>
+  <!-- <link rel="stylesheet" type="text/css" href=".css"> -->
+</head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+<!-- <link rel="stylesheet" href="style.css"> -->
+<title>IX-Mobile Plan Now</title>
+</head>
+<body>
+<div class="box two">
+  <h1>How much do you pay right now?</h1>
+  <h2>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from all carriers. </h2>
+</div>
+<fieldset>
+  <div>
+    <label for="carrier">carrier:</label>
+    <select name="carrier" id="carrier" onchange="return showLines();">
+      <option value=""></option>
+        <option value="ATT">AT&amp;T</option>
+        <option value="Verizon">Verizon</option>
+        <option value="Sprint">Sprint</option>
+        <option value="T-Mobile">T-Mobile</option>
+    </select>
+  </div>
+
+  <!-- <div id="line" style="visibility:hidden;"> -->
+    <label for="selectLine" style="visibility:hidden;">Lines</lable>
+    <select name="selectLine" id="selectLine" onchange="return showPrice();">
+      <option value=""></option>
+      <option value="1">1 line</option>
+      <option value="2">2 lines</option>
+      <option value="3">3 lines</option>
+      <option value="4">4 lines</option>
+    </select>
+  </div>
+  <div id="price" style="visibility:hidden;">
+    <table id= "table">
+      <tr>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</fieldset>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
