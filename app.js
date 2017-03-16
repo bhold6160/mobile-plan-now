@@ -163,6 +163,12 @@ var arrayNumber = [];
 // };
 // comparePlan.checkClicks();
 
+// var carrierNames = att, verizon, tmobile, sprint;
+var attLine = ['$60', '$115', '$135', '$155', '$175'];
+var verizonLine = ['$80', '$140', '$160', '$180', '$230'];
+var tmobLine = ['$70', '$100', '$140', '$160', '$180'];
+var sprintLine = ['$50', '$90', '$90', '$90', '$90'];
+
 function showLines() {
   var selectBox = document.getElementById('carrier');
   var userInput = selectBox.options[selectBox.selectedIndex].value;
@@ -191,14 +197,23 @@ function showPrice() {
   if (userInput == '1') {
     document.getElementById('price').style.visibility = 'visible';
     table.appendChild(tr);
-    dataNames.textContent = carriersPrice[0];
+    dataNames.textContent = attLine[0] || verizonLine[0] || tmobLine[0] || sprintLine[0];
     tr.appendChild(dataNames);
   } else if (userInput === '2') {
     document.getElementById('price').style.visibility = 'visible';
+    table.appendChild(tr);
+    dataNames.textContent = attLine[1] || verizonLine[1] || tmobLine[1] || sprintLine[1];
+    tr.appendChild(dataNames);
   } else if (userInput === '3') {
     document.getElementById('price').style.visibility = 'visible';
+    table.appendChild(tr);
+    dataNames.textContent = attLine[2] || verizonLine[2] || tmobLine[2] || sprintLine[2];
+    tr.appendChild(dataNames);
   } else if (userInput === '4') {
     document.getElementById('price').style.visibility = 'visible';
+    table.appendChild(tr);
+    dataNames.textContent = attLine[3] || verizonLine[3] || tmobLine[3] || sprintLine[3];
+    tr.appendChild(dataNames);
   } else {
     document.getElementById('selectLine').style.visiblity = 'hidden';
   }
