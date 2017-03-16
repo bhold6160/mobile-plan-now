@@ -40,10 +40,7 @@
 //
 // };
 //
-// var att = new mobilePlan('AT&T',['$60','$115','$135','$155','$175']);
-// var verizon= new mobilePlan('Verizon',['$80','$140','$160','$180','$230']);
-// var tmobile = new mobilePlan('T-Mobile',['$70','$100','$140','$160','$180']);
-// var sprint = new mobilePlan('Sprint',['$50','$90','$90','$90','$90']);
+
 //
 // function mobilePlan(name, plan) {
 //   this.name = name;
@@ -101,76 +98,130 @@
 // var PikePlace = new comparePlan ('Pike Place','77','88');
 //
 // var table = document.getElementById('planTable');
-
-'use strict';
-
-var allItems = [];
-
-var form = document.getElementById('form');
-var button = document.getElementById('fun-button');
-
-var table = document.getElementById('table');
-var tbody = document.getElementById('table-body');
-var tfoot = document.getElementsByTagName('tfoot')[0];
-
-
-function Item(name,line, price) {
-  this.name = name;
-  this.line = line;
-  this.price = price;
-
-  allItems.push(this);
-}
-
-
-function makeItemRow(obj) {
-  var row = document.createElement('tr');
-
-  var nameCell = document.createElement('td');
-  nameCell.textContent = obj.name;
-  row.appendChild(nameCell);
-
-  var priceCell = document.createElement('td');
-  priceCell.textContent = obj.price;
-  row.appendChild(priceCell);
-
-  var taxCell = document.createElement('td');
-  taxCell.textContent = obj.line;
-  row.appendChild(taxCell);
-
-  tbody.appendChild(row);
-}
-
-function makeAllItemRows() {
-  for (var item of allItems) {
-    makeItemRow(item);
-  }
-}
-
-
-function handleFormSubmit(event) {
-  event.preventDefault();
-  console.log(event);
-
-  var name = event.target.name.value;
-  var line = event.target.line.value;
-  var price = event.target.price.value;
-
-
-  var newItem = new Item(name, line,price);
-
-  makeItemRow(newItem);
-  tfoot.innerHTML = ''
-
-  event.target.name.value = null;
-  event.target.line.value = null;
-  event.target.price.value = null;
-
-}
-
-form.addEventListener('submit', handleFormSubmit);
-
-makeAllItemRows();
+// ix////
+// 'use strict';
+//
+// var allItems = [];
+//
+// var form = document.getElementById('form');
+// var button = document.getElementById('fun-button');
+//
+// var table = document.getElementById('table');
+// var tbody = document.getElementById('table-body');
+// var tfoot = document.getElementsByTagName('tfoot')[0];
+//
+//
+// function Item(name,line, price) {
+//   this.name = name;
+//   this.line = line;
+//   this.price = price;
+//
+//   allItems.push(this);
+// }
+//
+//
+// function makeItemRow(obj) {
+//   var row = document.createElement('tr');
+//
+//   var nameCell = document.createElement('td');
+//   nameCell.textContent = obj.name;
+//   row.appendChild(nameCell);
+//
+//   var priceCell = document.createElement('td');
+//   priceCell.textContent = obj.price;
+//   row.appendChild(priceCell);
+//
+//   var taxCell = document.createElement('td');
+//   taxCell.textContent = obj.line;
+//   row.appendChild(taxCell);
+//
+//   tbody.appendChild(row);
+// }
+//
+// function makeAllItemRows() {
+//   for (var item of allItems) {
+//     makeItemRow(item);
+//   }
+// }
+//
+//
+// function handleFormSubmit(event) {
+//   event.preventDefault();
+//   console.log(event);
+//
+//   var name = event.target.name.value;
+//   var line = event.target.line.value;
+//   var price = event.target.price.value;
+//
+//
+//   var newItem = new Item(name, line,price);
+//
+//   makeItemRow(newItem);
+//   tfoot.innerHTML = ''
+//
+//   event.target.name.value = null;
+//   event.target.line.value = null;
+//   event.target.price.value = null;
+//
+// }
+//
+// form.addEventListener('submit', handleFormSubmit);
+//
+// makeAllItemRows();
 
 
 /////////////kenny///
+// var carriers = {
+// var att = ['$60','$115','$135','$155','$175'];
+// var verizon= ['$80','$140','$160','$180','$230'];
+// var tmobile = ['$70','$100','$140','$160','$180'];
+// var sprint = ['$50','$90','$90','$90','$90'];
+// }
+//
+// var carrierArr=carrier[i]
+//
+//
+//
+// var something= []
+// function Compare(name,line,price){
+//   this.name=name;
+//   this.line=line;
+//   this.price=price;
+//   this.arr = name[i];
+//
+//   something.push(this);
+// }
+//
+// price:function(){
+//   carrierArr[this.line]
+// }
+//
+// (function() {
+//
+//   for (var i in carrierName){
+//     var newPlan = new Compare(carrierName[i], line[i], price() )
+//   };
+// })()
+
+
+function showLines(){
+  var selectBox = document.getElementById('carrier');
+  var userInput = selectBox.options[selectBox.selectedIndex].value;
+  if(userInput == 'AtT'){
+    document.getElementById('selectLine').style.visibility ='visible';
+  } else{
+    document.getElementById('selectLine').style.visiblity='hidden';
+  }
+return false;
+}
+
+function showPrice(){
+  var selectBox = document.getElementById('selectLine');
+  var userInput = selectBox.options[selectBox.selectedIndex].value;
+  if(userInput == '1'){
+    document.getElementById('price').style.visibility ='visible';
+  } else{
+    document.getElementById('selectLine').style.visiblity='hidden';
+  }
+return false;
+}

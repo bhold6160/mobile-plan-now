@@ -12,165 +12,35 @@
 <title>IX-Mobile Plan Now</title>
 </head>
 <body>
-
-  <div class="wrapper">
-    <div class="flex-container">
-      <div class="flex-container-two">
-
-
-        <div class="box one">
-          <header>
-            <ul>
-              <li class="nav"><a href="about.html">About</a></li>
-              <li class="nav"><a href="index.html">Compare</a></li>
-              <li class="nav"><a href="chart.html">Graph</a></li>
-              <li id="battery"><img src="battery.png"</li>
-            </ul>
-          </header>
-        </div>
-
-
-        <!-- <main> -->
-        <div class="box two">
-          <h1>How much do you pay right now?</h1>
-          <h2>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from all carriers. </h2>
-        </div>
-<!--Customer imput form-->
-<!-- <section>
-<form id= "userform">
-  <fieldset>
-    <legend>Enter Your Current Plan Info</legend>
-    <input type="textContent" name="carrier" placeholder="Carrier" id="name">
-
-    <input type="textContent" name="lines" placeholder="Number of Lines" id="lines">
-
-    <input type="textContent" name="amount" placeholder="Current bill" id="price">
-
-    <input type="submit" value="submit"> -->
-
-<!--Kennie!-->
-
-  <!-- </fieldset>
-  <fieldset id='form'> -->
-
-      <!-- <legend>Carriers!</legend>
-    <select name="carrier" id="carrier" class="dropdown">
-      <option id="att" value="att">AT&amp;T</option>
-      <option id="verizon" value="verizon">Verizon</option>
-      <option id="t-mobile" value="t-mobile">T-Mobile</option>
-      <option id="sprint" value="sprint">Sprint</option>
+<div class="box two">
+  <h1>How much do you pay right now?</h1>
+  <h2>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from all carriers. </h2>
+</div>
+<fieldset>
+  <div>
+    <label for="carrier">carrier:</label>
+    <select name="carrier" id="carrier" onchange="return showLines();">
+      <option value=""></option>
+        <option value="AtT">AtT</option>
+        <option value="Verizon">Verizon</option>
+        <option value="Sprint">Sprint</option>
+        <option value="T-Mobile">T-Mobile</option>
     </select>
+  </div>
 
-    <label>Number of line:</label>
-    <select name="lines" id="lines" class="dropdown">
-      <option id="oneLine" value="oneLine">1 line</option>
-      <option id="twoLine" value="twoLine">2 lines</option>
-      <option id="threeLine" value="threeLine">3 lines</option>
-      <option id="fourLine" value="fourLine">4 lines</option>
-      <option id="fiveLine" value="fiveLine">5 lines</option>
-    </select> -->
-<!--
-    <label for="monthlyPayment">Monthly Payment($):</label>
-    <input type="number" id="monthlyPayment" min="0" max="1000" required> -->
-
-    <!-- <input type="submit" value="submit" id="show-results">
-  </fieldset>
-</form>
-</section> -->
-
-
-
-<!--carryer form-->
-        <!-- <div class= "box three">
-          <form id="form">
-
-          </form>
-        </div> -->
-        <form id="form">
-               <fieldset>
-                 <legend>Your Current P</legend>
-
-                 <!--make a block-level input  -->
-                 <!-- <div> -->
-                   <label for="name">name:</label>
-                   <input type="text" name="name" >
-                    <label for="name">number of lines:</label>
-                   <input type="text" name="line">
-                    <label for="name">price:</label>
-                   <input type="text" name="price" >
-                 <input type="submit" value="Add the item">
-               </fieldset>
-               <fieldset>
-   <legend>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from all carriers. </legend>
- <label>Carrier:</label>
-   <select name="carrier" id="carrier">
-     <option id="chooseCarrier" value="chooseCarrier"></option>
-     <option id="att" value="att">AT&amp;T</option>
-     <option id="verizon" value="verizon">Verizon</option>
-     <option id="t-mobile" value="t-mobile">T-Mobile</option>
-     <option id="sprint" value="sprint">Sprint</option>
-   </select>
-
- <label>Number of line:</label>
-   <select name="lines" id="lines">
-     <option id="chooseLine" value="chooseLine"></option>
-     <option id="oneLine" value="oneLine">1 line</option>
-     <option id="twoLine" value="twoLine">2 lines</option>
-     <option id="threeLine" value="threeLine">3 lines</option>
-     <option id="fourLine" value="fourLine">4 lines</option>
-     <option id="fiveLine" value="fiveLine">5 lines</option>
-   </select>
-
-
-
-   <input type="submit" value="submit" id="show-results">
- </fieldset>
-             </form>
-
-
-
-        <div class="box four">
-          <table id="table">
-              <thead>
-                <tr>
-                  <th>name</th>
-                  <th>lines</th>
-                  <th>price</th>
-                </tr>
-              </thead>
-
-              <tbody id="table-body">
-
-              </tbody>
-
-              <tfoot>
-
-              </tfoot>
-          </table>
-            </div>
-
-
-
-
-            <div id = "chart">
-              <table id = 'planTable'>
-                <tr id = 'tableTitle'>
-                  <!-- <th></th>
-                  <th>AT&amp;T </th>
-                  <th>Verizon</th>
-                  <th>T-Mobile</th>
-                  <th>Sprint</th> -->
-                </tr>
-              </table>
-              <tr id = 'results'>
-              </div>
-              <script type="text/javascript" src="app2.js"></script>
-
-            <!-- </main> -->
-
-
-          </div>
-        </div>
-        <script type="text/javascript" src="app2.js"></script>
-      </body>
-      </html>
+  <!-- <div id="line" style="visibility:hidden;"> -->
+    <label for="selectLine" style="visibility:hidden;">Lines</lable>
+    <select name="selectLine" id="selectLine" onchange="return showPrice();">
+      <option value=""></option>
+      <option value="1">1 line</option>
+      <option value="2">2 lines</option>
+      <option value="3">3 lines</option>
+    </select>
+  </div>
+  <div id="price" style="visibility:hidden;">
+    <p>$60<p>
+  </div>
+</fieldset>
+<script type="text/javascript" src="app2.js"></script>
+</body>
+</html>
