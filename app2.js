@@ -10,7 +10,8 @@ var yourResults = function() {
   var monthlyPayment = document.createElement('td');
   var latestPayment = document.createElement('td');
   var suggestion = document.createElement('td');
-// if user select carrier, write it out
+  var link = document.createElement('td');
+  // if user select carrier, write it out
   if (document.getElementById('carrier').value == 'att') {
     carrier.textContent = 'AT&T';
   }  else if (document.getElementById('carrier').value == 'verizon') {
@@ -20,7 +21,7 @@ var yourResults = function() {
   } else if (document.getElementById('carrier').value == 'sprint') {
     carrier.textContent = 'Sprint';
   }
-// if user select number of lines, write it out
+  // if user select number of lines, write it out
   if (document.getElementById('lines').value == 'oneLine') {
     line.textContent = '1 line';
   }  else if (document.getElementById('lines').value == 'twoLine') {
@@ -36,41 +37,47 @@ var yourResults = function() {
   // if user select inserts total amount, write 'Your Plan: $amountOne
   var amountOne = document.getElementById('monthlyPayment').value;
   var amountTwo = arrayNumber;
-    monthlyPayment.textContent = 'Your Plan: $' + amountOne;
-    latestPayment.textContent = 'Lastest Plan: $' + amountTwo;
+  var amountThree = webLink;
+  monthlyPayment.textContent = 'Your Plan: $' + amountOne;
+  latestPayment.textContent = 'Lastest Plan: $' + amountTwo[0];
 
-if (amountOne > amountTwo) {
-  suggestion.textContent = 'You are paying too much!! Change your plan!'
-} else {
-  suggestion.textContent = 'Your current plan is cheaper than current plan. Keep it!'
-}
-  // Generate inputs in the table
-    trEl.appendChild(carrier);
-    trEl.appendChild(line);
-    trEl.appendChild(monthlyPayment);
-    trEl.appendChild(latestPayment);
-    trEl.appendChild(suggestion);
-    planTable.appendChild(trEl);
+  if (amountOne > amountTwo[0]) {
+    suggestion.textContent = 'You are paying too much!! Change your plan at ' + amountThree;
+  } else if (amountOne == amountTwo[0]) {
+    suggestion.textContent = 'You currently have latest plan from your carrier';
+  } else if (amountOne < amountTwo[0]) {
+    suggestion.textContent = 'Your current plan is cheaper than current plan. Keep it!';
   };
+  // Generate inputs in the table
+  trEl.appendChild(carrier);
+  trEl.appendChild(line);
+  trEl.appendChild(monthlyPayment);
+  trEl.appendChild(latestPayment);
+  trEl.appendChild(suggestion);
+  trEl.appendChild(link)
+  planTable.appendChild(trEl);
+};
 
 // array of price of carrier per lines
 var carriersPrice = [60,115,135,155,175,80,140,160,180,230,70,100,140,160,180,50,90,90,90,90];
 // store dropdown input into arrayNumber
 var arrayNumber = [];
+var webLink = [];
 
 /// get id from lines
 var selectLines = {
   showResultsEl: document.getElementById('lines'),
 
   checkSelectTwo: function() {
-// event listern : by selecting carrier from dropdown menu, push it to arrayNumber
+    // event listern : by selecting carrier from dropdown menu, push it to arrayNumber
     this.showResultsEl.addEventListener('change', function(e){
-      e.preventDefault();
+      e.stopPropagation();
       if (document.getElementById('lines').value == 'chooseLine') {
 
       } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '1') {
         console.log('att : 1 line');
         arrayNumber.push(carriersPrice[0]);
+        webLink.push('www.att.com');
       } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '2') {
         console.log('att : 2 lines');
         arrayNumber.push(carriersPrice[1]);
@@ -148,7 +155,7 @@ var comparePlan = {
     this.showResultsEl.addEventListener('click', function(e){
       e.preventDefault();
       var liEl = document.createElement('li');
-        liEl.textContent = yourResults();
+      liEl.textContent = yourResults();
     });
   }
 };
