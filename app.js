@@ -1,123 +1,163 @@
-var carrierNames = ['AT&T', 'Verizon', 'T-Mobile', 'Sprint'];
-var oneLine = new MobilePlan('1 line', ['$60', '$70', '$80', '$90']);
-var twoLine = new MobilePlan('2 lines', ['$160', '$170', '$180', '$190']);
-var threeLine = new MobilePlan('3 lines', ['$260', '$270', '$280', '$290']);
-var fourLine = new MobilePlan('4 lines', ['$360', '$470', '$580', '$960']);
+// 'use strict'
 
+// create table
 var table = document.getElementById('planTable');
 
-function MobilePlan(name, plan, price) {
-  this.name = name;
-  this.plan = plan;
-  this.price = price;
-
-  // lineArr.push(this);
-  // chartData.data.datasets[0].data.push(this);
-  // chartData.data.datasets[0].backgroundColor.push(this);
-  // console.log(chartData.);
-};
-
-// var stringifiedAllProducts = localStorage.getItem('stringfiedData');
-// var parsedData = JSON.parse(stringifiedData);
-// for (var i in parsedData) {
-//   productArr[i].votes = parsedData[i].votes;
-
-MobilePlan.prototype.renderAsRow = function () {
+// create result from what users input
+var yourResults = function () {
   var planTable = document.getElementById('planTable');
   var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
-  tdEl.textContent = this.name;
-  trEl.appendChild(tdEl);
-  planTable.appendChild(trEl);
+  var carrier = document.createElement('td');
+  var line = document.createElement('td');
+  var monthlyPayment = document.createElement('td');
+  var latestPayment = document.createElement('td');
+  var suggestion = document.createElement('td');
 
-  for (var i = 0; i < 4; i++) {
-    // Get an element from li
-    var planPrice = document.createElement('td');
-
-    // Create and populate an LI element for each of the data points that you want to render
-    planPrice.textContent = this.plan[i];
-
-    // Append the li to ul
-    trEl.appendChild(planPrice);
-    planTable.appendChild(trEl);
+  // if user select carrier, write it out
+  if (document.getElementById('carrier').value == 'att') {
+    carrier.textContent = 'AT&T';
+  }  else if (document.getElementById('carrier').value == 'verizon') {
+    carrier.textContent = 'Verizon';
+  } else if (document.getElementById('carrier').value == 't-mobile') {
+    carrier.textContent = 'T-Mobile';
+  } else if (document.getElementById('carrier').value == 'sprint') {
+    carrier.textContent = 'Sprint';
   }
+
+  // if user select number of lines, write it out
+  if (document.getElementById('lines').value == 'oneLine') {
+    line.textContent = '1 line';
+  }  else if (document.getElementById('lines').value == 'twoLine') {
+    line.textContent = '2 lines';
+  } else if (document.getElementById('lines').value == 'threeLine') {
+    line.textContent = '3 lines';
+  } else if (document.getElementById('lines').value == 'fourLine') {
+    line.textContent = '4 lines';
+  } else if (document.getElementById('lines').value == 'fiveLine') {
+    line.textContent = '5 lines';
+  }
+
+  // if user select inserts total amount, write 'Your Plan: $amountOne
+  var amountOne = document.getElementById('monthlyPayment').value;
+  var amountTwo = arrayNumber;
+  monthlyPayment.textContent = 'Your Plan: $' + amountOne;
+  latestPayment.textContent = 'Lastest Plan: $' + amountTwo;
+
+  if (amountOne > amountTwo) {
+    suggestion.textContent = 'You are paying too much!! Change your plan!';
+  } else {
+    suggestion.textContent = 'Your current plan is cheaper than current plan. Keep it!';
+  }
+
+  // Generate inputs in the table
+  trEl.appendChild(carrier);
+  trEl.appendChild(line);
+  trEl.appendChild(monthlyPayment);
+  trEl.appendChild(latestPayment);
+  trEl.appendChild(suggestion);
+  planTable.appendChild(trEl);
 };
 
-var tracker = {
-  selectEl: document.getElementById('select'),
+// array of price of carrier per lines
+var carriersPrice = [60, 115, 135, 155, 175, 80, 140, 160, 180, 230, 70, 100, 140, 160, 180, 50, 90, 90, 90, 90];
 
-  checkClicks: function () {
-    this.selectEl.addEventListener('change', function (e) {
+// store dropdown input into arrayNumber
+var arrayNumber = [];
+
+/// get id from lines
+var selectLines = {
+  showResultsEl: document.getElementById('lines'),
+
+  checkSelectTwo: function () {
+
+    // event listern : by selecting carrier from dropdown menu, push it to arrayNumber
+    this.showResultsEl.addEventListener('change', function (e) {
       // e.preventDefault();
-      var liEl = document.createElement('li');
-      if (document.getElementById('select').value == 'choose') {
+      e.stopPropagation();
+      if (document.getElementById('lines').value == 'chooseLine') {
 
-      } else if (document.getElementById('select').value == 'oneLine') {
-        console.log('oneLine');
-        liEl.textContent = oneLine.renderAsRow();
-      } else if (document.getElementById('select').value == 'twoLine') {
-        console.log('twoLine');
-        liEl.textContent = twoLine.renderAsRow();
-      } else if (document.getElementById('select').value == 'threeLine') {
-        console.log('threeLine');
-        liEl.textContent = threeLine.renderAsRow();
-      } else if (document.getElementById('select').value == 'fourLine') {
-        console.log('fourLine');
-        liEl.textContent = fourLine.renderAsRow();
+      } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '1') {
+        console.log('att : 1 line');
+        arrayNumber.push(carriersPrice[0]);
+      } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '2') {
+        console.log('att : 2 lines');
+        arrayNumber.push(carriersPrice[1]);
+      } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '3') {
+        console.log('att : 3 lines');
+        arrayNumber.push(carriersPrice[2]);
+      } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '4') {
+        console.log('att : 4 line');
+        arrayNumber.push(carriersPrice[3]);
+      } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '5') {
+        console.log('att : 5 line');
+        arrayNumber.push(carriersPrice[4]);
+      } else if (document.getElementById('carrier').value == 'verizon' && document.getElementById('lines').value == '1') {
+        console.log('verizon : 1 line');
+        arrayNumber.push(carriersPrice[5]);
+      } else if (document.getElementById('carrier').value == 'verizon' && document.getElementById('lines').value == '2') {
+        console.log('verizon : 2 lines');
+        arrayNumber.push(carriersPrice[6]);
+      } else if (document.getElementById('carrier').value == 'verizon' && document.getElementById('lines').value == '3') {
+        console.log('verizon : 3 lines');
+        arrayNumber.push(carriersPrice[7]);
+      } else if (document.getElementById('carrier').value == 'verizon' && document.getElementById('lines').value == '4') {
+        console.log('verizon : 4 lines');
+        arrayNumber.push(carriersPrice[8]);
+      } else if (document.getElementById('carrier').value == 'verizon' && document.getElementById('lines').value == '5') {
+        console.log('verizon : 5 lines');
+        arrayNumber.push(carriersPrice[9]);
+      } else if (document.getElementById('carrier').value == 't-mobile' && document.getElementById('lines').value == '1') {
+        console.log('tmobile : 1 line');
+        arrayNumber.push(carriersPrice[10]);
+      } else if (document.getElementById('carrier').value == 't-mobile' && document.getElementById('lines').value == '2') {
+        console.log('tmobile : 2 lines');
+        arrayNumber.push(carriersPrice[11]);
+      } else if (document.getElementById('carrier').value == 't-mobile' && document.getElementById('lines').value == '3') {
+        console.log('tmobile : 3 lines');
+        arrayNumber.push(carriersPrice[12]);
+      } else if (document.getElementById('carrier').value == 't-mobile' && document.getElementById('lines').value == '4') {
+        console.log('tmobile : 4 lines');
+        arrayNumber.push(carriersPrice[13]);
+      } else if (document.getElementById('carrier').value == 't-mobile' && document.getElementById('lines').value == '5') {
+        console.log('tmobile : 5 lines');
+        arrayNumber.push(carriersPrice[14]);
+      } else if (document.getElementById('carrier').value == 'sprint' && document.getElementById('lines').value == '1') {
+        console.log('sprint : 1 line');
+        arrayNumber.push(carriersPrice[15]);
+      } else if (document.getElementById('carrier').value == 'sprint' && document.getElementById('lines').value == '2') {
+        console.log('sprint : 2 lines');
+        arrayNumber.push(carriersPrice[16]);
+      } else if (document.getElementById('carrier').value == 'sprint' && document.getElementById('lines').value == '3') {
+        console.log('sprint : 3 lines');
+        arrayNumber.push(carriersPrice[17]);
+      } else if (document.getElementById('carrier').value == 'sprint' && document.getElementById('lines').value == '4') {
+        console.log('sprint : 4 lines');
+        arrayNumber.push(carriersPrice[18]);
+      } else if (document.getElementById('carrier').value == 'sprint' && document.getElementById('lines').value == '5') {
+        console.log('sprint : 5 lines');
+        arrayNumber.push(carriersPrice[19]);
       }
     });
   },
-
-  // comparePlans: function (planLines) {
-  //   for (var i in lineArr) {
-  //     if (planLines === lineArr[i].plan)
-  //     myChart.data.datasets[0].data[i]++;
-  //     myChart.update();
-  //     break;
-  //   }
-  // },
 };
+var planTable = document.getElementById('planTable');
+var trEl = document.createElement('tr');
+var comparePayment = document.createElement('td');
 
-// var form = document.getElementById('form');
-// var table = document.getElementById('table');
-// var createRowElement = document.createElement('tr');
-// table.appendChild(createRowElement);
-//
-// // Generating new table for user input
-// function generateTable() {
-//   console.log('~~~~~~~~~~~~~');
-//   var nameEl = document.createElement('td');
-//   name.textContent = this.name;
-//   createRowElement.appendChild(name);
-//
-//   // User number of lines
-//   var planEl = document.createElement('td');
-//   plan.textContent = this.plan;
-//   createRowElement.appendChild(plan);
-//
-//   // user Total
-//   var priceEl = document.createElement('td');
-//   price.textContent = this.price;
-//   createRowElement.appendChild(price);
-// }
-//
-// // Form submit event
-// function handleFormSubmit(event) {
-//   event.preventDefault();
-//   console.log('~~~~~~~~~~~~');
-//
-//   var name = event.target.name.value;
-//   var plan = parseFloat(event.target.plan.value);
-//   var price = parseFloat(event.target.price.value);
-//
-//   var userPhone = new MobilePlan(name, plan, price);
-//
-//   event.target.name.value = null;
-//   event.target.plan.value = null;
-//   event.target.price.value = null;
-// }
+trEl.appendChild(comparePayment);
+planTable.appendChild(trEl);
 
-// form.addEventListener('submit', handleFormSubmit);
-tracker.checkClicks();
+selectLines.checkSelectTwo();
 
-// localStorage.getItem('stringfiedData');
+var comparePlan = {
+  showResultsEl: document.getElementById('show-results'),
+
+  checkClicks: function() {
+    this.showResultsEl.addEventListener('click', function (e) {
+      e.preventDefault();
+      var liEl = document.createElement('li');
+      liEl.textContent = yourResults();
+    });
+  },
+};
+comparePlan.checkClicks();
