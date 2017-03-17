@@ -19,7 +19,8 @@ this.yourResults = function () {
   var trEl = document.createElement('tr');
   var carrier = document.createElement('td');
   var line = document.createElement('td');
-  var monthlyPayment = document.createElement('td');
+  var monthlyPayment = document.crea
+  teElement('td');
 
   if (document.getElementById('carrier')) {
     carrier.textContent = this.name;

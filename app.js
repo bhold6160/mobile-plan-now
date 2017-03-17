@@ -236,18 +236,20 @@ function showPrice() {
   return false;
 }
 
-// function populate(s1, s2) {
-//   var s1 = document.getElementById(s1);
-//   var s2 = document.getElementById(s2);
-//   s2.textContent = '';
-//   if(s1.value == 'att') {
-//     var carrierArr = ['|', 'att | AT&T', 'verizon | Verizon', 'tmobile | T-Mobile', 'sprint | Sprint']
-//   }
-//   for (var i in carrierArr) {
-//     var pair = carrierArr[i].split('|');
-//     var newOption = document.createElement('option');
-//     newOption.value = pair[0];
-//     newOption.textContent = pair[1];
-//     s2.options.add(newOption);
-//   }
-// }
+
+
+function populate(s1, s2) {
+  var s1 = document.getElementById(s1);
+  var s2 = document.getElementById(s2);
+  s2.textContent = '';
+  if(s1.value == 'att') {
+    var carrierArr = ['|', 'att | AT&T', 'verizon | Verizon', 'tmobile | T-Mobile', 'sprint | Sprint']
+  }
+  for (var i in carrierArr) {
+    var pair = carrierArr[i].split('|');
+    var newOption = document.createElement('option');
+    newOption.value = pair[0];
+    newOption.textContent = pair[1];
+    s2.options.add(newOption);
+  }
+}
