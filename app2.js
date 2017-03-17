@@ -7,7 +7,7 @@ var yourResults = function() {
   var trEl = document.createElement('tr');
   var carrier = document.createElement('td');
   var line = document.createElement('td');
-  var monthlyPay = document.createElement('td');
+  var monthlyPayment = document.createElement('td');
   var latestPayment = document.createElement('td');
   var suggestion = document.createElement('td');
   var link = document.createElement('td');
@@ -32,26 +32,26 @@ var yourResults = function() {
     line.textContent = '4 lines';
   } else if (document.getElementById('lines').value == 'fiveLine') {
     line.textContent = '5 lines';
-  }
+  };
 
   // if user select inserts total amount, write 'Your Plan: $amountOne
   var amountOne = document.getElementById('monthlyPayment').value;
   var amountTwo = arrayNumber;
   var amountThree = webLink;
-  monthlyPay.textContent = 'Your Plan: $' + amountOne;
+  monthlyPayment.textContent = 'Your Plan: $' + amountOne;
   latestPayment.textContent = 'Lastest Plan: $' + amountTwo[0];
 
   if (amountOne > amountTwo[0]) {
-    suggestion.textContent = 'You are paying too much!!';
+    suggestion.textContent = 'You are paying too much!! Change your plan!';
   } else if (amountOne == amountTwo[0]) {
     suggestion.textContent = 'You currently have latest plan from your carrier';
   } else if (amountOne < amountTwo[0]) {
-    suggestion.textContent = 'Keep your current plan, it is cheaper!!';
+    suggestion.textContent = 'Your current plan is cheaper than current plan. Keep it!';
   };
   // Generate inputs in the table
   trEl.appendChild(carrier);
   trEl.appendChild(line);
-  trEl.appendChild(monthlyPay);
+  trEl.appendChild(monthlyPayment);
   trEl.appendChild(latestPayment);
   trEl.appendChild(suggestion);
   trEl.appendChild(link)
