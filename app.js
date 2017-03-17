@@ -59,7 +59,6 @@
 // };
 
 // array of price of carrier per lines
-var carriersPrice = [60, 115, 135, 155, 175, 80, 140, 160, 180, 230, 70, 100, 140, 160, 180, 50, 90, 90, 90, 90];
 
 // store dropdown input into arrayNumber
 var arrayNumber = [];
@@ -163,22 +162,38 @@ var arrayNumber = [];
 // };
 // comparePlan.checkClicks();
 
-// var carrierNames = att, verizon, tmobile, sprint;
+// tracker = {
+//
+// }
+//
+// function userChoice() {
+//   if (showLines === ) {
+//
+//   }
+//
+
+var carriersPrice = [60, 115, 135, 155, 175, 80, 140, 160, 180, 230, 70, 100, 140, 160, 180, 50, 90, 90, 90, 90];
+
+// var carrierNames = ['att', 'verizon', 'tmobile', 'sprint'];
 var attLine = ['$60', '$115', '$135', '$155', '$175'];
 var verizonLine = ['$80', '$140', '$160', '$180', '$230'];
 var tmobLine = ['$70', '$100', '$140', '$160', '$180'];
 var sprintLine = ['$50', '$90', '$90', '$90', '$90'];
+// var att = 'ATT';
+// var verizon = 'Verizon';
+// var tmobile = 't-mobile';
+// var sprint = 'Sprint';
 
 function showLines() {
   var selectBox = document.getElementById('carrier');
   var userInput = selectBox.options[selectBox.selectedIndex].value;
-  if (userInput == 'ATT') {
+  if (userInput) {
     document.getElementById('selectLine').style.visibility = 'visible';
-  } else if (userInput == 'Verizon') {
+  } else if (userInput) {
     document.getElementById('selectLine').style.visibility = 'visible';
-  } else if (userInput == 't-mobile') {
+  } else if (userInput) {
     document.getElementById('selectLine').style.visibility = 'visible';
-  } else if (userInput == 'Sprint') {
+  } else if (userInput) {
     document.getElementById('selectLine').style.visibility = 'visible';
   } else {
     document.getElementById('selectLine').style.visiblity = 'hidden';
@@ -220,3 +235,19 @@ function showPrice() {
 
   return false;
 }
+
+// function populate(s1, s2) {
+//   var s1 = document.getElementById(s1);
+//   var s2 = document.getElementById(s2);
+//   s2.textContent = '';
+//   if(s1.value == 'att') {
+//     var carrierArr = ['|', 'att | AT&T', 'verizon | Verizon', 'tmobile | T-Mobile', 'sprint | Sprint']
+//   }
+//   for (var i in carrierArr) {
+//     var pair = carrierArr[i].split('|');
+//     var newOption = document.createElement('option');
+//     newOption.value = pair[0];
+//     newOption.textContent = pair[1];
+//     s2.options.add(newOption);
+//   }
+// }

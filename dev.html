@@ -18,8 +18,8 @@
 </div>
 <fieldset>
   <div>
-    <label for="carrier">carrier:</label>
-    <select name="carrier" id="carrier" onchange="return showLines();">
+    <label for="carrier">Select Your Carrier:</label>
+    <select name="carrier" id="carrier" onchange="showLines();">
       <option value=""></option>
         <option value="ATT">AT&amp;T</option>
         <option value="Verizon">Verizon</option>
@@ -27,10 +27,10 @@
         <option value="T-Mobile">T-Mobile</option>
     </select>
   </div>
-
-  <!-- <div id="line" style="visibility:hidden;"> -->
-    <label for="selectLine" style="visibility:hidden;">Lines</lable>
-    <select name="selectLine" id="selectLine" onchange="return showPrice();">
+<hr />
+  <div id="line" style="visibility:hidden;">
+     <!-- <label for="selectLine" style="visibility:hidden;">Lines</lable> -->
+    <select name="selectLine" id="selectLine" onchange="showPrice();">
       <option value=""></option>
       <option value="1">1 line</option>
       <option value="2">2 lines</option>
@@ -38,6 +38,16 @@
       <option value="4">4 lines</option>
     </select>
   </div>
+<!-- Select Your Carrier:
+<select id="select1" name="select1" onchange="populate("select1", "select2")">
+  <option value=""></option>
+  <option value="att">AT&amp;T</option>
+  <option value="verizon">Verizon</option>
+  <option value="tmobile">T-Mobile</option>
+  <option value="sprint">Sprint</option>
+</select>
+  <hr />
+  <select id="select2" name="select2"></select> -->
   <div id="price" style="visibility:hidden;">
     <table id= "table">
       <tr>
