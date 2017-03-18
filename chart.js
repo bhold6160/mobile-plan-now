@@ -41,7 +41,7 @@ var chartData = {
       },
       {
         label: 'Your Plan',
-        data: sprintLine,
+        data: userInput,
         // backgroundColor: 'yellow',
         borderColor: 'black',
         borderWidth: 2,
