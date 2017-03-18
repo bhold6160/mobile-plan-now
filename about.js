@@ -1,14 +1,14 @@
 var photosNames = ['BrandonsFace', 'KennysFace','IxsFace',];
-  var photoArr = [];
-  var BioArr = [];
+var photoArr = [];
+var BioArr = [];
 
-// note to self: capitalizse constructor functiosn//
+
 function Bio(name){
   this.name= name;
   this.path = 'images/' + name + '.jpg';
   photoArr.push(this);
 }
-// IIFE builds image, add p tag latter//
+
 (function(){
   for(var i =0; i < photosNames.length; i++){
     new Bio(photosNames[i]);
@@ -29,12 +29,9 @@ var tracker= {
   }
 };
 
-  // displayText: function (){
-  //
-  // }
 
 tracker.imageContainerEl.addEventListener('click',function(e){
-    tracker.displayImages();
+  tracker.displayImages();
 
 });
 
