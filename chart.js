@@ -39,8 +39,16 @@ var chartData = {
         borderColor: 'yellow',
         borderWidth: 2,
       },
+      {
+        label: 'Your Plan',
+        data: sprintLine,
+        // backgroundColor: 'yellow',
+        borderColor: 'black',
+        borderWidth: 2,
+      },
     ],
   },
 };
 
 var myChart = new Chart(ctx, chartData);
+localStorage.getItem('stringifiedUserInput');

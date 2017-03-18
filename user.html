@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
-  <title>Compare Plans</title>
+  <meta charset="utf-8" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+  <title>MobilePlanNow</title>
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans">
+<link rel="stylesheet" href="style.css">
+<title>Mobile Plan Now</title>
 </head>
+
 <body>
-  <header>
-    <nav class= "nav">
-        <a href="index.html">Home</a>
-        <a href="user.html">Compare</a>
-        <a href="about.html">About</a>
-    </nav>
-  </header>
-  <h1>How many lines do you need?</h1>
-  <select name="select" id="select">
-    <option id="choose" value= "choose">Select Your Number of Lines</option>
-    <option id="oneLine" value="oneLine">1 line</option>
-    <option id="twoLine" value="twoLine">2 lines</option>
-    <option id="threeLine" value="threeLine">3 lines</option>
-    <option id="fourLine" value="fourLine">4 lines</option>
-  </select>
+  <div class="wrapper">
+    <div class="flex-container">
+      <div class="flex-container-two">
+        <div class="box one">
+          <header>
+            <ul>
+              <li class="nav"><a href="about.html">About</a></li>
+              <li class="nav"><a href="index.html">Compair</a></li>
+              <li class="nav"><a href="user.html">Graph</a></li>
+              <li id="battery"><img src="battery.png"</li>
+            </ul>
+          </header>
+        </div>
 
-  <div id = "chart">
-    <table id = "planTable">
-      <tr id = "tableTitle">
-        <th></th>
-        <th>AT&amp;T </th>
-        <th>Verizon</th>
-        <th>T-Mobile</th>
-        <th>Sprint</th>
-      </tr>
-    </table>
-    <tr id = "results">
+
+        <!-- <main> -->
+      <div class="box seven">
+        <h1>Compare America's Top Carriers</h1>
+      <div style="width: 300px;">
+        <section class="chart">
+          <canvas id="myChart" width="100" height="100"></canvas>
+        </section>
+  <ul id="list"></ul>
+</main>
+      </div>
     </div>
+    </div>
+      <!-- </main> -->
 
-    <section>
-      <form id= "userform">
-        <fieldset>
-          <legend>Enter Your Current Plan Info</legend>
-          <input type="text" name="carrier" placeholder="Carrier">
+      </div>
+    </div>
+  </div>
+</div>
 
-          <input type="number" name="plan" placeholder="Number of Lines">
 
-          <input type="number" name="price" placeholder="Current bill">
-
-          <input type="submit" value="submit">
-        </fieldset>
-      </form>
-    </section>
-    <script type="text/javascript" src="app.js"></script>
-  </body>
-  </html>
+<script type="text/javascript" src="chart.js"></script>
+</body>
+</html>

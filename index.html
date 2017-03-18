@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+  <title>MobilePlanNow</title>
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans">
+  <link rel="stylesheet" href="style.css">
   <title>Mobile Plan Now</title>
 </head>
+
 <body>
-
   <div class="wrapper">
-    <header>
-      <nav class= "nav">
-        <ul>
-        <a href="index.html">Home</a>
-        <a href="user.html">Compare</a>
-        <a href="about.html">About</a>
-      </ul>
-      </nav>
-    </header>
+    <div class="flex-container">
+      <div class="flex-container-two">
+        <div class="box one">
+          <header>
+            <ul>
+              <li class="nav"><a href="about.html">About</a></li>
+              <li class="nav"><a href="index.html">Compair</a></li>
+              <li class="nav"><a href="user.html">Graph</a></li>
+              <li id="battery"><img src="battery.png"</li>
+            </ul>
+          </header>
+        </div>
 
-    <main>
-      <h1>Compare America's Top Carriers</h1>
+        <h1>Compare Your Plan to Current Rates</h1>
 
-      <!-- section for chart -->
-    <section class="chart">
-      <canvas id="myChart" width="100" height="100"></canvas>
-    </section>
+        <form id="form">
+          <fieldset>
+            <legend>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from your carrier. </legend>
+            <label>Carrier:</label>
+            <select name="carrier" id="carrier">
+              <option id="chooseCarrier" value="chooseCarrier"></option>
+              <option id="att" value="att">AT&amp;T</option>
+              <option id="verizon" value="verizon">Verizon</option>
+              <option id="t-mobile" value="t-mobile">T-Mobile</option>
+              <option id="sprint" value="sprint">Sprint</option>
+            </select>
 
+            <label>Number of line:</label>
+            <select name="lines" id="lines">
+              <option id="chooseLine" value="chooseLine"></option>
+              <option id="oneLine" value="1">1 line</option>
+              <option id="twoLine" value="2">2 lines</option>
+              <option id="threeLine" value="3">3 lines</option>
+              <option id="fourLine" value="4">4 lines</option>
+              <option id="fiveLine" value="5">5 lines</option>
+            </select>
 
-      <ul id="list"></ul>
-    </main>
+            <label for="monthlyPayment">Monthly Payment($):</label>
+            <input type="number" id="monthlyPayment" min="0" max="1000" required>
 
-    <footer>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</footer>
-  </div>
-<script type="text/javascript" src="chart.js"></script>
-</body>
-</html>
+            <input type="submit" value="submit" id="show-results">
+          </fieldset>
+        </form>
+
+        <div>
+          <table id = 'planTable'>
+          </div>
+
+          <script type="text/javascript" src="app.js"></script>
+        </body>
+        </html>

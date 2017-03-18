@@ -1,29 +1,207 @@
-* {
-  /*background-color: black;*/
-  /*color: white;*/
+*{
+  font-family: 'Droid Sans', sans-serif;
+  margin:0;
 }
 
-.chart {
-  width: 45%;
-  height: 20%;
+body{
+  background: #eee;
 }
 
-.nav a {
+.wrapper{
+
+  width:100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  background-image: url("phone.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  min-height: 650px;
+}
+.flex-container-two{
+  flex-basis: 440px;
+  margin-top: 89px;
+margin-left: 137px;
+margin-right: 129px;
+border-style: solid;
+border-width: 8px;
+border-radius: 11px;
+background: white;
+}
+.one ul{
+  display: flex;
+      text-align: center;
+          margin-left: -34px;
+
+}
+.one li{
+  margin: 2px;
+  flex-basis: 63px;
+list-style: none;
+
+
+}
+.nav{
+  background: orange;
+  height: 59px;
+  padding: 1px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  line-height: 58px;
+  text-align: center;
+  font-weight: 900;
+}
+#battery{
+padding-left: 373px;
+
+}
+.box{
+  height: 88px;
+  flex-basis: 600px;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+}
+
+.one{
+  /*background: red;*/
+}
+h1{
+      color: #2EDB31;
+}
+h2{
+  color: 60584a;
+font-size: 16px;
+width: 450px;
+justify-content: center;
+text-align: center;
+padding-right: 21px;
+display: flex;
+padding-left: 100px;
+}
+.two{
+  /*background: blue;*/
+
+  text-align: center;
+}
+
+.three{
+  /*background: green;*/
+  text-align: center;
+  height: 61px;
+}
+
+.four{
+  /*background: yellow;*/
   display: flex;
   justify-content: center;
-  text-decoration: none;
-  padding-left: 5px;
-  padding-right: 5px;
+}
+.five{
+  background: white;
+  text-align: center;
+  align-self: flex-end;
+  line-height: 15;
+  font-size: 10px;
+}
+.six{
+  align-items: flex-start;
+  color: ##3d3930;
+
+}
+p{
+  margin:10px;
+  padding:px;
+}
+canvas{
+  height: 300px;
+    width: 402px;
 }
 
-.nav a:hover {
-  display: flex;
+.chartfive{
+      height: 71px;
+      background: white;
+      text-align: center;
+      align-self: flex-end;
+      line-height: 9;
+      font-size: 10px;
+}
+.aboutfive{
+  height: 175px;
+  background: white;
+  text-align: center;
+  align-self: flex-end;
+  line-height: 33;
+  font-size: 10px;
+
+}
+a{
+text-decoration: none;
+font-size: 17px;
+color: #fff;
+
+}
+.seven{
+  flex-direction: row;
+}
+
+tr{
   justify-content: center;
-  text-decoration: none;
-  padding-left: 5px;
-  padding-right: 5px;
+      border-style: solid;
+      background-color: #30294E;
+      color: white;
+
 }
 
-#planTable {
+td{
   border-style: solid;
+      border-width: 1px;
+      border-color: #989489;
+}
+
+
+/* Dropdown Button */
+fieldset{
+  background-color: orange;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.choose {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown{
+  /*background-color: #2EDB31;*/
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+#imageOne{
+  max-width: 100px;
 }
