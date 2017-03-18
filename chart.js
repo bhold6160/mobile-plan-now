@@ -1,11 +1,18 @@
+
+
+// function Item(one, two, three, four) {
+//   this.one = one;
+//   this.two = two;
+//   this.three = three;
+//   this.four = four;
+// }
+var yourPlan = [0,0,0,0];
 var verizonLine = [80, 140, 160, 180];
 var attLine = [60, 115, 135, 155];
 var tmobLine = [70, 100, 140, 160];
 var sprintLine = [50, 90, 90, 90];
 var numberOfLines = ['1 Line', '2 Lines', '3 Lines', '4 Lines'];
-
 var ctx = document.getElementById('myChart').getContext('2d');
-
 var chartData = {
   type: 'bar',
   data: {
@@ -39,8 +46,16 @@ var chartData = {
         borderColor: 'yellow',
         borderWidth: 2,
       },
+      {
+        label: 'Your Plan',
+        data: yourPlan,
+        // backgroundColor: 'yellow',
+        borderColor: 'black',
+        borderWidth: 2,
+      },
     ],
   },
 };
 
 var myChart = new Chart(ctx, chartData);
+localStorage.getItem('stringifiedUserInput');
