@@ -51,7 +51,7 @@ var yourResults = function () {
   // if user select inserts total amount, write 'Your Plan: $amountOne
   var amountOne = document.getElementById('monthlyPayment').value;
   var amountTwo = arrayNumber[arrayNumber.length - 1];
-  userAmount.push(amountOne)
+  userAmount.push(amountTwo)
   monthlyPayment.textContent = 'Your Plan: $' + amountOne;
   latestPayment.textContent = 'Lastest Plan: $' + amountTwo;
 
