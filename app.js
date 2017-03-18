@@ -4,11 +4,11 @@
   var stringifiedAll = localStorage.getItem('stringifiedUserInput');
   var parsedAllProducts = JSON.parse(stringifiedAll);
   for (var i in parsedAllProducts) {
-    userAmount[i] = parsedAllProducts[i];
+    userInput[i] = parsedAllProducts[i];
   }
 });
 
-var userAmount = [];
+// var arrayNumber = [];
 
 // create table
 var table = document.getElementById('planTable');
@@ -50,8 +50,8 @@ var yourResults = function () {
 
   // if user select inserts total amount, write 'Your Plan: $amountOne
   var amountOne = document.getElementById('monthlyPayment').value;
+  userInput.push(amountOne);
   var amountTwo = arrayNumber[arrayNumber.length - 1];
-  userAmount.push(amountTwo)
   monthlyPayment.textContent = 'Your Plan: $' + amountOne;
   latestPayment.textContent = 'Lastest Plan: $' + amountTwo;
 
@@ -78,6 +78,7 @@ var carriersPrice = [60, 115, 135, 155, 175, 80, 140, 160, 180, 230, 70, 100, 14
 
 // store dropdown input into arrayNumber
 var arrayNumber = [];
+var userInput = [];
 
 /// get id from lines
 var selectLines = {
@@ -152,7 +153,7 @@ var selectLines = {
         arrayNumber.push(carriersPrice[19]);
       }
     });
-    localStorage.setItem('stringifiedUserInput', JSON.stringify(userAmount));
+
   },
 };
 
@@ -174,6 +175,7 @@ var comparePlan = {
       var liEl = document.createElement('li');
       liEl.textContent = yourResults();
     });
+      localStorage.setItem('stringifiedUserInput', JSON.stringify(userInput));
   },
 };
 comparePlan.checkClicks();
