@@ -4,32 +4,63 @@
   <meta charset="utf-8" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
   <title>MobilePlanNow</title>
-  <!-- <link rel="stylesheet" type="text/css" href=".css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans">
+  <link rel="stylesheet" href="style.css">
+  <title>Mobile Plan Now</title>
 </head>
-<meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<title>Mobile Plan Now</title>
-</head>
-<body>
-    <div class="wrapper">
-      <div class="flex-container">
-        <div class="flex-container-two">
-          <div class="box one">
-            <header>
-              <ul>
-                <li class="nav"><a href="about.html">About</a></li>
-                <li class="nav"><a href="index.html">Compare</a></li>
-                <li class="nav"><a href="chart.html">Graph</a></li>
-                <li id="battery"><img src="battery.png"</li>
-              </ul>
-            </header>
-          </div>
-<div class="box two">
-  <h1>How much do you pay right now?</h1>
-  <h2>Select your carrier, number of lines, monthly payment here. We will compare with latest plan from all carriers. </h2>
-</div>
 
-<script type="text/javascript" src="app2.js"></script>
-</body>
-</html>
+<body>
+  <div class="wrapper">
+    <div class="flex-container">
+      <div class="flex-container-two">
+        <div class="box one">
+          <header>
+            <ul>
+              <li class="nav"><a href="about.html">About</a></li>
+              <li class="nav"><a href="index.html">Home</a></li>
+              <li class="nav"><a href="chart.html">Graph</a></li>
+              <li id="battery"><img src="battery.png"</li>
+            </ul>
+          </header>
+        </div>
+
+        <h1>Compare Your Plan to Current Rates</h1>
+        <h3>Select your carrier, number of lines, monthly payment here.</h3>
+          <h3 id='lineTwo'>We will compare with latest plan from your carrier. </h3>
+
+        <form id="form" >
+          <fieldset >
+
+            <label>Carrier:</label>
+            <select name="carrier" id="carrier" class="choose">
+              <option id="chooseCarrier" value="chooseCarrier"class="dropdown"></option>
+              <option id="att" value="att"class="dropdown">AT&amp;T</option>
+              <option id="verizon" value="verizon"class="dropdown">Verizon</option>
+              <option id="t-mobile" value="t-mobileclass="dropdown"">T-Mobile</option>
+              <option id="sprint" value="sprint"class="dropdown">Sprint</option>
+            </select>
+
+            <label>Number of line:</label>
+            <select name="lines" id="lines">
+              <option id="chooseLine" value="chooseLine"class="dropdown"></option>
+              <option id="oneLine" value="1"class="dropdown">1 line</option>
+              <option id="twoLine" value="2"class="dropdown">2 lines</option>
+              <option id="threeLine" value="3"class="dropdown">3 lines</option>
+              <option id="fourLine" value="4"class="dropdown">4 lines</option>
+              <option id="fiveLine" value="5"class="dropdown">5 lines</option>
+            </select>
+
+            <label for="monthlyPayment">Monthly Payment($):</label>
+            <input type="number" id="monthlyPayment" min="0" max="1000" required>
+
+            <input type="submit" value="submit" id="show-results" class="button">
+          </fieldset>
+        </form>
+
+
+          <div id = 'planTable'>
+          </div>
+
+          <script type="text/javascript" src="app.js"></script>
+        </body>
+        </html>
