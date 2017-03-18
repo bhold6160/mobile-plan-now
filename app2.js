@@ -1,6 +1,4 @@
 'use strict'
-// create table
-var table = document.getElementById('planTable');
 // create result from what users input
 var yourResults = function() {
   var planTable = document.getElementById('planTable');
@@ -43,9 +41,9 @@ var yourResults = function() {
   if (amountOne > amountTwo) {
     suggestion.textContent = 'You are paying too much!! Change your plan!';
   } else if (amountOne == amountTwo) {
-    suggestion.textContent = 'You currently have latest plan from your carrier';
+    suggestion.textContent = 'You currently have the latest plan rate from your carrier';
   } else if (amountOne < amountTwo) {
-    suggestion.textContent = 'Your current plan is cheaper than current plan. Keep it!';
+    suggestion.textContent = 'Your current plan is cheaper than latest plan from your carrier. Keep it!';
   };
   // Generate inputs in the table
   trEl.appendChild(carrier);
@@ -137,12 +135,6 @@ var selectLines = {
   }
 };
 
-var planTable = document.getElementById('planTable');
-var trEl = document.createElement('tr');
-var comparePayment = document.createElement('td');
-
-trEl.appendChild(comparePayment);
-planTable.appendChild(trEl);
 
 selectLines.checkSelectTwo();
 
