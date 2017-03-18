@@ -4,14 +4,11 @@
   <meta charset="utf-8" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
   <title>MobilePlanNow</title>
-  <link rel="stylesheet" type="text/css" href=".css">
-</head>
-<meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans">
 <link rel="stylesheet" href="style.css">
 <title>Mobile Plan Now</title>
 </head>
-<body>
+<body onclick="changeQuote()">
 
   <div class="wrapper">
     <div class="flex-container">
@@ -20,25 +17,23 @@
           <header>
             <ul>
               <li class="nav"><a href="about.html">About</a></li>
-              <li class="nav"><a href="index.html">Price</a></li>
-              <li class="nav"><a href="">idk</a></li>
-              <li id="battery"><img src="battery.png"</li>
+              <li class="nav"><a href="index.html">Home</a></li>
+              <li class="nav"><a href="chart.html">Graph</a></li>
+            <li class="nav"><a href="login.html">login</a></li>
+              <li id="battery"><img src="battery.png"></li>
             </ul>
           </header>
         </div>
 
         <!-- <main> -->
         <div class="box six">
-          <h3>About</h3>
-          <p>Mobile Plan Now is a web application build to help you compare Mobile device plans. </p>
 
-          <h3>Price</h3>
-          <p>Just select the number of lines you want on your plan and we will provide you with the price for an unlimited data plan from 3 top wireless providers </p>
+          <section class="contaner" id="imageContainer">
+            <img  id="imageOne">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-          <h3>IDK</h3>
-          <p>Have other mobile plans you're interested in?
-Insert the name, price and number of lines into this form and we will create a chart with our data and the data you've gathered so you can compare as many mobile plans as you'd like. </p>
 
+          </section>
 
         </div>
       <div class="box four">
@@ -51,6 +46,6 @@ Insert the name, price and number of lines into this form and we will create a c
     </div>
   </div>
 </div>
-<script type="text/javascript" src="chartTest.js"></script>
+<script type="text/javascript" src="about.js"></script>
 </body>
 </html>
