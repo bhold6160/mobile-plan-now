@@ -21,7 +21,7 @@ function validate() {
 
     if (username == usernameArr && password == passwordArr) {
         alert('Welcome ' + usernameArr + '!');
-        window.location = "login.html"; // Redirecting to other page.
+        window.location = "chart.html"; // Redirecting to other page.
         return false;
     } else {
         attempt--; // Decrementing by one.
