@@ -50,7 +50,7 @@ var yourResults = function () {
 
   // if user select inserts total amount, write 'Your Plan: $amountOne
   var amountOne = document.getElementById('monthlyPayment').value;
-  userInput.push(amountOne);
+  userInput.push(parseInt(amountOne));
   var amountTwo = arrayNumber[arrayNumber.length - 1];
   monthlyPayment.textContent = 'Your Plan: $' + amountOne;
   latestPayment.textContent = 'Lastest Plan: $' + amountTwo;
@@ -88,7 +88,8 @@ var selectLines = {
 
     // event listern : by selecting carrier from dropdown menu, push it to arrayNumber
     this.showResultsEl.addEventListener('change', function (e) {
-      e.stopPropagation();
+      // e.stopPropagation();
+      e.preventDefault();
       if (document.getElementById('lines').value == 'chooseLine') {
 
       } else if (document.getElementById('carrier').value == 'att' && document.getElementById('lines').value == '1') {
