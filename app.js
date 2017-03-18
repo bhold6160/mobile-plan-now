@@ -1,20 +1,6 @@
-// 'use strict'
-
-(function () {
-  var stringifiedAll = localStorage.getItem('stringifiedUserInput');
-  var parsedAllProducts = JSON.parse(stringifiedAll);
-  for (var i in parsedAllProducts) {
-    userAmount[i] = parsedAllProducts[i];
-  }
-});
-
-var userAmount = [];
-
-// create table
-var table = document.getElementById('planTable');
-
+'use strict'
 // create result from what users input
-var yourResults = function () {
+var yourResults = function() {
   var planTable = document.getElementById('planTable');
   var trEl = document.createElement('tr');
   var carrier = document.createElement('td');
@@ -22,7 +8,6 @@ var yourResults = function () {
   var monthlyPayment = document.createElement('td');
   var latestPayment = document.createElement('td');
   var suggestion = document.createElement('td');
-  var link = document.createElement('td');
 
   // if user select carrier, write it out
   if (document.getElementById('carrier').value == 'att') {
@@ -34,48 +19,43 @@ var yourResults = function () {
   } else if (document.getElementById('carrier').value == 'sprint') {
     carrier.textContent = 'Sprint';
   }
-
   // if user select number of lines, write it out
   if (document.getElementById('lines').value == '1') {
-    line.textContent = '1 line ';
+    line.textContent = '1 line';
   }  else if (document.getElementById('lines').value == '2') {
-    line.textContent = '2 lines ';
+    line.textContent = '2 lines';
   } else if (document.getElementById('lines').value == '3') {
-    line.textContent = '3 lines ';
+    line.textContent = '3 lines';
   } else if (document.getElementById('lines').value == '4') {
-    line.textContent = '4 lines ';
+    line.textContent = '4 lines';
   } else if (document.getElementById('lines').value == '5') {
-    line.textContent = '5 lines ';
+    line.textContent = '5 lines';
   };
 
   // if user select inserts total amount, write 'Your Plan: $amountOne
   var amountOne = document.getElementById('monthlyPayment').value;
-  var amountTwo = arrayNumber[arrayNumber.length - 1];
-  userAmount.push(amountOne)
+  var amountTwo = arrayNumber[arrayNumber.length-1];
   monthlyPayment.textContent = 'Your Plan: $' + amountOne;
   latestPayment.textContent = 'Lastest Plan: $' + amountTwo;
 
   if (amountOne > amountTwo) {
-    suggestion.textContent = ' You are paying too much!! Change your plan!';
+    suggestion.textContent = 'You are paying too much!! Change your plan!';
   } else if (amountOne == amountTwo) {
-    suggestion.textContent = ' You\'re currently paying about the same amount as other carriers.';
+    suggestion.textContent = 'You currently have the latest plan rate from your carrier';
   } else if (amountOne < amountTwo) {
-    suggestion.textContent = 'Keep your current plan, you are paying less than other carriers!';
+    suggestion.textContent = 'Your current plan is cheaper than latest plan from your carrier. Keep it!';
   };
-
   // Generate inputs in the table
-
+  trEl.appendChild(carrier);
   trEl.appendChild(line);
   trEl.appendChild(monthlyPayment);
   trEl.appendChild(latestPayment);
   trEl.appendChild(suggestion);
-  // trEl.appendChild(link);
   planTable.appendChild(trEl);
 };
 
 // array of price of carrier per lines
-var carriersPrice = [60, 115, 135, 155, 175, 80, 140, 160, 180, 230, 70, 100, 140, 160, 180, 50, 90, 90, 90, 90];
-
+var carriersPrice = [60,115,135,155,175,80,140,160,180,230,70,100,140,160,180,50,90,90,90,90];
 // store dropdown input into arrayNumber
 var arrayNumber = [];
 
@@ -83,10 +63,9 @@ var arrayNumber = [];
 var selectLines = {
   showResultsEl: document.getElementById('lines'),
 
-  checkSelectTwo: function () {
-
+  checkSelectTwo: function() {
     // event listern : by selecting carrier from dropdown menu, push it to arrayNumber
-    this.showResultsEl.addEventListener('change', function (e) {
+    this.showResultsEl.addEventListener('change', function(e){
       e.stopPropagation();
       if (document.getElementById('lines').value == 'chooseLine') {
 
@@ -152,29 +131,21 @@ var selectLines = {
         arrayNumber.push(carriersPrice[19]);
       }
     });
-    localStorage.setItem('stringifiedUserInput', JSON.stringify(userAmount));
-  },
+  }
 };
 
-var planTable = document.getElementById('planTable');
-var trEl = document.createElement('tr');
-var comparePayment = document.createElement('td');
-
-trEl.appendChild(comparePayment);
-planTable.appendChild(trEl);
 
 selectLines.checkSelectTwo();
 
 var comparePlan = {
   showResultsEl: document.getElementById('show-results'),
 
-  checkClicks: function () {
-    this.showResultsEl.addEventListener('click', function (e) {
+  checkClicks: function() {
+    this.showResultsEl.addEventListener('click', function(e){
       e.preventDefault();
       var liEl = document.createElement('li');
       liEl.textContent = yourResults();
     });
-  },
+  }
 };
 comparePlan.checkClicks();
-localStorage.getItem('stringifiedUserInput');
