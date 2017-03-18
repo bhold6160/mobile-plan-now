@@ -6,7 +6,7 @@
 //   this.three = three;
 //   this.four = four;
 // }
-var yourPlan = [0,0,0,0];
+
 var verizonLine = [80, 140, 160, 180];
 var attLine = [60, 115, 135, 155];
 var tmobLine = [70, 100, 140, 160];
@@ -46,13 +46,7 @@ var chartData = {
         borderColor: 'yellow',
         borderWidth: 2,
       },
-      {
-        label: 'Your Plan',
-        data: yourPlan,
-        // backgroundColor: 'yellow',
-        borderColor: 'black',
-        borderWidth: 2,
-      },
+
     ],
   },
 };

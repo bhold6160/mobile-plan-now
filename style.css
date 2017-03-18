@@ -25,41 +25,41 @@ body{
 .flex-container-two{
   flex-basis: 440px;
   margin-top: 89px;
-margin-left: 137px;
-margin-right: 129px;
-border-style: solid;
-border-width: 8px;
-border-radius: 11px;
-background: white;
-    overflow: scroll;
+  margin-left: 137px;
+  margin-right: 129px;
+  border-style: solid;
+  border-width: 8px;
+  border-radius: 11px;
+  background: white;
+  overflow: scroll;
 }
 .one ul{
   display: flex;
-      text-align: center;
-          margin-left: -34px;
+  text-align: center;
+  margin-left: -34px;
 
 }
 .one li{
   margin: 2px;
   flex-basis: 63px;
-list-style: none;
+  list-style: none;
 
 
 }
 .nav{
   background: orange;
-height: 59px;
-padding: 1px;
-border-radius: 50%;
-font-size: 17px;
-color: #fff;
-line-height: 58px;
-text-align: center;
-font-weight: 900;
+  height: 59px;
+  padding: 1px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  line-height: 58px;
+  text-align: center;
+  font-weight: 900;
 }
 
 #battery{
-    padding-left: 310px;
+  padding-left: 310px;
 
 }
 .box{
@@ -70,37 +70,33 @@ font-weight: 900;
 
 }
 
-.one{
-  /*background: red;*/
-}
+
 h1{
-      color: #2EDB31;
-          margin-left: 9%;
+  color: #2EDB31;
+  margin-left: 9%;
 }
 h2{
   color: 60584a;
-font-size: 16px;
-width: 450px;
-justify-content: center;
-text-align: center;
-padding-right: 21px;
-display: flex;
-padding-left: 100px;
+  font-size: 16px;
+  width: 450px;
+  justify-content: center;
+  text-align: center;
+  padding-right: 21px;
+  display: flex;
+  padding-left: 100px;
 }
 .two{
-  /*background: blue;*/
 
   text-align: center;
 }
 
 .three{
-  /*background: green;*/
+
   text-align: center;
   height: 61px;
 }
 
 .four{
-  /*background: yellow;*/
   display: flex;
   justify-content: center;
 }
@@ -122,16 +118,16 @@ p{
 }
 canvas{
   height: 300px;
-    width: 402px;
+  width: 402px;
 }
 
 .chartfive{
-      height: 71px;
-      background: white;
-      text-align: center;
-      align-self: flex-end;
-      line-height: 9;
-      font-size: 10px;
+  height: 71px;
+  background: white;
+  text-align: center;
+  align-self: flex-end;
+  line-height: 9;
+  font-size: 10px;
 }
 .aboutfive{
   height: 175px;
@@ -143,9 +139,9 @@ canvas{
 
 }
 a{
-text-decoration: none;
-font-size: 17px;
-color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  color: #fff;
 
 }
 .seven{
@@ -154,30 +150,30 @@ color: #fff;
 
 tr{
   justify-content: center;
-      border-style: solid;
-      background-color: #30294E;
-      color: white;
+  border-style: solid;
+  background-color: #30294E;
+  color: white;
 
 }
 
 td{
   border-style: solid;
-      border-width: 2px;
-      border-color: #989489;
-      font-size: 12px;
-      padding: 7px;
+  border-width: 2px;
+  border-color: #989489;
+  font-size: 12px;
+  padding: 7px;
 }
 
 
 /* Dropdown Button */
 fieldset{
   background-color: orange;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-weight: bolder;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
 }
 
 
@@ -186,8 +182,8 @@ fieldset{
   max-width: 100px;
 }
 h3{
-font-size: 18px;
-color: #3d3d75;
+  font-size: 18px;
+  color: #3d3d75;
   margin-left: 7%;
 
 }
@@ -195,59 +191,58 @@ color: #3d3d75;
   padding-bottom: 2%;
   margin-left: 11%;
 }
-/*button code made from:https://css-tricks.com/examples/ButtonMaker/#*/
 .button {
-   border-top: 1px solid #e0e0e0;
-   background: #18ab27;
-   background: -webkit-gradient(linear, left top, left bottom, from(#13f535), to(#18ab27));
-   background: -webkit-linear-gradient(top, #13f535, #18ab27);
-   background: -moz-linear-gradient(top, #13f535, #18ab27);
-   background: -ms-linear-gradient(top, #13f535, #18ab27);
-   background: -o-linear-gradient(top, #13f535, #18ab27);
-   padding: 5px 10px;
-   -webkit-border-radius: 14px;
-   -moz-border-radius: 14px;
-   border-radius: 14px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 14px;
-   font-family: Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
+  border-top: 1px solid #e0e0e0;
+  background: #18ab27;
+  background: -webkit-gradient(linear, left top, left bottom, from(#13f535), to(#18ab27));
+  background: -webkit-linear-gradient(top, #13f535, #18ab27);
+  background: -moz-linear-gradient(top, #13f535, #18ab27);
+  background: -ms-linear-gradient(top, #13f535, #18ab27);
+  background: -o-linear-gradient(top, #13f535, #18ab27);
+  padding: 5px 10px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 14px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
 .button:hover {
-   border-top-color: #0d2c40;
-   background: #0d2c40;
-   color: #ccc;
+  border-top-color: #0d2c40;
+  background: #0d2c40;
+  color: #ccc;
 
-   }
+}
 .button:active {
-   border-top-color: #092030;
-   background: #092030;
-   }
+  border-top-color: #092030;
+  background: #092030;
+}
 #imageContainer{
   display: flex;
 }
 #imageOne{
   max-width: 250px;
-    max-height: 250px;
-    margin-left: 15px;
+  max-height: 250px;
+  margin-left: 15px;
 
 }
 #login{
   color: #383559;
-    font-size: 51px;
+  font-size: 51px;
 }
 .loginLabel{
 
   color: #1db519;
-font-size: 20px;
-padding: 10px;
+  font-size: 20px;
+  padding: 10px;
 }
 #aboutP:{
   font-size: 16px;
-justify-content: flex-start;
+  justify-content: flex-start;
 }
