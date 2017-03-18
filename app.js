@@ -2,9 +2,9 @@
 
 (function () {
   var stringifiedAll = localStorage.getItem('stringifiedUserInput');
-  var parsedAllProducts = JSON.parse(stringifiedAll);
-  for (var i in parsedAllProducts) {
-    userInput[i] = parsedAllProducts[i];
+  var parsedPlanInfo = JSON.parse(stringifiedAll);
+  for (var i in parsedPlanInfo) {
+    userInput[i] = parsedPlanInfo[i];
   }
 });
 
@@ -12,8 +12,8 @@
   var userNamePassword = localStorage.getItem('stringifiedNamePass');
   var parsedNamePassword = JSON.parse(stringifiedInfo);
   for (var i in parsedNamePassword) {
-    username = parsedNamePassword[i];
-    password = parsedNamePassword[i];
+    usernameArr = parsedNamePassword[i];
+    passwordArr = parsedNamePassword[i];
   }
 });
 
@@ -30,8 +30,8 @@ function validate() {
     localStorage.setItem('stringifiedNamePass', JSON.stringify(username, password));
 
     if (username == usernameArr && password == passwordArr) {
-        alert("Login successfully");
-        window.location = "index.html"; // Redirecting to other page.
+        alert('Welcome ' + usernameArr + '!');
+        window.location = "user.html"; // Redirecting to other page.
         return false;
     } else {
         attempt--; // Decrementing by one.
