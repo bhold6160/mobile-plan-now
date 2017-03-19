@@ -146,6 +146,34 @@ var comparePlan = {
       var liEl = document.createElement('li');
       liEl.textContent = yourResults();
     });
+>>>>>>> 7bbae2618e0e5ecc68c7053430408164052ab09e
   }
+}
+
+// oneLine.renderAsRow();
+// twoLine.renderAsRow();
+// threeLine.renderAsRow();
+// fourLine.renderAsRow();
+
+var tracker = {
+  showResultsEl: document.getElementById('show-results'),
+  resultsEl: document.getElementById('results'),
+
+  checkClicks: function() {
+    this.showResultsEl.addEventListener('click', function(e){
+      e.preventDefault();
+      tracker.renderResults();
+    });
+  },
+
+  renderResults: function (){
+    var liEl = document.createElement('li');
+    liEl.textContent = oneLine.renderAsRow();
+  },
+
 };
+<<<<<<< HEAD
+
+tracker.renderResults();
+=======
 comparePlan.checkClicks();
